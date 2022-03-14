@@ -20,19 +20,28 @@ interface Props {
 
 export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }) => {
   const data = items?.find(item => item.id === id);
-  const [ref, inView] = useInView({
+  const [bottom, inViewBottom] = useInView({
+    threshold: 1,
+  })
+  const [top, inViewTop] = useInView({
     threshold: 1,
   })
 
   const router = useRouter();
 
-  function checkSwipeToDismiss() {
-    if(inView){
+  function swipeUpTodismiss() {
+    if(inViewBottom ){
+      console.log("inview")
+    router.push({ pathname: "/" }, undefined, { scroll: false })}
+  }
+  function swipeBottomTodismiss() {
+    if(inViewTop ){
       console.log("inview")
     router.push({ pathname: "/" }, undefined, { scroll: false })}
   }
   const handlers = useSwipeable({
-    onSwipedUp: () => checkSwipeToDismiss(),
+    onSwipedUp: () => swipeUpTodismiss(),
+    onSwipedDown:() => swipeBottomTodismiss(),
    
     // preventDefaultTouchmoveEvent: true,
     // trackMouse: true
@@ -54,6 +63,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
         <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 11 }} ></div>
 
         <div  {...handlers} className="card-content-container open">
+          <div ref={top}></div>
           <motion.div
             // drag="x"
             // dragConstraints={{ left: 1, right: 1 }}
@@ -85,7 +95,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
               </Link>
             </motion.div>
           </motion.div>
-          <div ref={ref}></div>
+          <div ref={bottom}></div>
         </div>
       </div>
 
