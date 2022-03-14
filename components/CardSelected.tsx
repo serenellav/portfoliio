@@ -32,7 +32,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
     router.push({ pathname: "/" }, undefined, { scroll: false })}
   }
   const handlers = useSwipeable({
-    onSwipedDown: () => checkSwipeToDismiss(),
+    onSwipedUp: () => checkSwipeToDismiss(),
    
     // preventDefaultTouchmoveEvent: true,
     // trackMouse: true
@@ -53,7 +53,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 10 }}>
         <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 11 }} ></div>
 
-        <div {...handlers} className="card-content-container open">
+        <div  {...handlers} className="card-content-container open">
           <motion.div
             // drag="x"
             // dragConstraints={{ left: 1, right: 1 }}
