@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { useRouter } from 'next/router';
+import { useSwipeable } from 'react-swipeable';
 import { InView, useInView } from "react-intersection-observer";
 
 import Link from 'next/link'
@@ -30,7 +31,12 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       console.log("inview")
     router.push({ pathname: "/" }, undefined, { scroll: false })}
   }
-
+  const handlers = useSwipeable({
+    onSwipedDown: () => checkSwipeToDismiss(),
+   
+    // preventDefaultTouchmoveEvent: true,
+    // trackMouse: true
+  });
 
   return (
     <>
@@ -47,13 +53,13 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 10 }}>
         <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 11 }} ></div>
 
-        <div className="card-content-container open">
+        <div {...handlers} className="card-content-container open">
           <motion.div
-            drag="x"
-            dragConstraints={{ left: 1, right: 1 }}
-            onDragEnd={
-              () => checkSwipeToDismiss()
-            }
+            // drag="x"
+            // dragConstraints={{ left: 1, right: 1 }}
+            // onDragEnd={
+            //   () => checkSwipeToDismiss()
+            // }
             className="card-content" layoutId={`card-container-${id}`}>
             <motion.div
               className="card-image-container"
