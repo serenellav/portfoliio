@@ -49,8 +49,8 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
 
         <div className="card-content-container open">
           <motion.div
-            drag="y"
-            dragConstraints={{ top: 1, bottom: 1 }}
+            drag="x"
+            dragConstraints={{ left: 1, right: 1 }}
             onDragEnd={
               () => checkSwipeToDismiss()
             }
