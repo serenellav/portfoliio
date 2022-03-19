@@ -8,6 +8,9 @@ import Link from 'next/link'
 import { items } from "./Data";
 import { useScrollConstraints } from "../utils/use-scroll-constraints";
 import { useWheelScroll } from "../utils/use-wheel-scroll";
+import { useAppSelector } from "../store/hooks";
+import { cartSelector } from "../store/cart.slice";
+import Video from "./Video";
 
 interface Props {
   id?: any,
@@ -19,13 +22,16 @@ interface Props {
 
 
 export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }) => {
-  const data = items?.find(item => item.id === id);
+  const {data} =useAppSelector(cartSelector)
+  // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
+  const item = data.find(item => item.id === parseInt(id));
   const [bottom, inViewBottom] = useInView({
     threshold: 1,
   })
   const [top, inViewTop] = useInView({
     threshold: 1,
   })
+  console.log(item,data,id)
 
   const router = useRouter();
 
@@ -39,6 +45,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       console.log("inview")
     router.push({ pathname: "/" }, undefined, { scroll: false })}
   }
+ 
   const handlers = useSwipeable({
     onSwipedUp: () => swipeUpTodismiss(),
     onSwipedDown:() => swipeBottomTodismiss(),
@@ -75,21 +82,61 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
               className="card-image-container"
               layoutId={`card-image-container-${id}`}
             >
+                 <Video  src={item?.acf.link}></Video>
               {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
             </motion.div>
             <motion.div
               className="title-container"
               layoutId={`title-container-${id}`}
             >
-              <span className="category">{data?.category}</span>
-              <h2>{data?.title}</h2>
+              <span className="category">
+              {item._embedded["wp:term"][0][0].name}
+              </span>
+              <h2>{item.title.rendered}</h2>
             </motion.div>
 
             <motion.div className="content-container" animate>
-              <p style={{ fontSize: "100px" }}>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias odit eum beatae eius laboriosam, numquam repellat aspernatur nisi omnis provident inventore nobis unde
-                quibusdam dolorem aliquid</p>
-              cupiditate
-              fugiat in. Eaque?
+              <p style={{  }}>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias odit eum beatae eius laboriosam, numquam repellat aspernatur nisi omnis provident inventore nobis unde
+                quibusdam dolorem aliquid
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+                aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+                v</p>
+                
+           
               <Link href="/" scroll={false} >
                 <a >back</a>
               </Link>

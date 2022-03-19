@@ -1,31 +1,63 @@
+import React from "react";
+import { motion, useMotionValue } from "framer-motion";
+import { useRouter } from 'next/router';
+import { useSwipeable } from 'react-swipeable';
+import { InView, useInView } from "react-intersection-observer";
 
-import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { CardSelected } from '../components/CardSelected'
-import  Home  from '../components/Home'
-import { Selected } from '../components/Selected'
-import Video from '../components/Video'
-import { cartSelector } from '../store/cart.slice'
-import { useAppSelector } from '../store/hooks'
+import { items } from "./Data";
+import { useScrollConstraints } from "../utils/use-scroll-constraints";
+import { useWheelScroll } from "../utils/use-wheel-scroll";
+import { useAppSelector } from "../store/hooks";
+import { cartSelector } from "../store/cart.slice";
+import Video from "./Video";
 
-const Post = () => {
-  const router = useRouter()
- const { id } = router.query
+interface Props {
+    id?: any,
+    isSelected?: boolean,
+    history?: {
+        push: (route: string) => void;
+    };
+}
 
-  const { data } = useAppSelector(cartSelector)
-  // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
-  const item = data.find(item => item.id.toString() === id);
 
-  // React.useEffect(()=>{
-  //   const contenuto = document.querySelector("body");
-  //   contenuto?.setAttribute("class", "overflow-hidden");
-  // },[])
+export const Selected: React.FC<Props> = ({ id, isSelected = true, history }) => {
+    const { data } = useAppSelector(cartSelector)
+    // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
+    const item = data.find(item => item.id === parseInt(id));
+    //   const [bottom, inViewBottom] = useInView({
+    //     threshold: 1,
+    //   })
+    //   const [top, inViewTop] = useInView({
+    //     threshold: 1,
+    //   })
+    //   console.log(item,data,id)
 
-  return    <motion.div key={2}  initial={{x:1000}} animate={{ x:0}} exit={{ x:1000}}   transition={{ type: 'linear' }}className="div">
-<div>
-  <div  >
+    const router = useRouter();
+
+    //   function swipeUpTodismiss() {
+    //     if(inViewBottom ){
+    //       console.log("inview")
+    //     router.push({ pathname: "/" }, undefined, { scroll: false })}
+    //   }
+    //   function swipeBottomTodismiss() {
+    //     if(inViewTop ){
+    //       console.log("inview")
+    //     router.push({ pathname: "/" }, undefined, { scroll: false })}
+    //   }
+
+    //   const handlers = useSwipeable({
+    //     onSwipedUp: () => swipeUpTodismiss(),
+    //     onSwipedDown:() => swipeBottomTodismiss(),
+
+    // preventDefaultTouchmoveEvent: true,
+    // trackMouse: true
+    //   });
+
+    return (
+        <>
+    
+            <div  >
                 <Video src={item?.acf.link}></Video>
                 {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
             </div>
@@ -83,10 +115,10 @@ const Post = () => {
                     <a >back</a>
                 </Link>
             </div>
-            </div>
-  </motion.div>
 
 
+
+
+        </>
+    );
 }
-
-export default Post

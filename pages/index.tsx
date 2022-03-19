@@ -1,29 +1,70 @@
-import type { NextPage } from 'next'
+import type { GetStaticPropsResult, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useAppDispatch,useAppSelector } from '../store/hooks'
 import { cartSelector, setData } from '../store/cart.slice'
 import React from 'react'
-import { List } from '../components/List'
-import { AnimatePresence } from 'framer-motion'
+import Home  from '../components/Home'
+import { AnimatePresence, motion } from 'framer-motion'
+import Card from '../components/Card'
 
 
-const Home: NextPage = () => {
+interface Props {
+
+  video?:any[],
+
+}
+
+const Casa: NextPage<Props> = ({video}) => {
 const {data} =useAppSelector(cartSelector)
 
   const dispatch = useAppDispatch()
 
   React.useEffect(()=>{
-dispatch(setData([1,2,3]))
+dispatch(setData(video))
 
   },[])
   return (
-    <>
-    <List  />
   
-  </>
+    <motion.div key={1}  initial={{x:-1000}} animate={{ x:0}} exit={{ x:-1000}}   transition={{ type: 'linear' }} id="card-list-container" >
+       
+        <ul className="card-list">
+            {video?.map(item => (
+                <Card key={item.id} item={item} />
+            ))}
+        </ul>
+        </motion.div>
+  
   )
 }
+export async function getStaticProps(): Promise<GetStaticPropsResult<Props>>  {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
 
-export default Home
+ 
+
+  const url =
+  "https://www.dariovettura.com/dance/wp-json/wp/v2/posts?_embed";
+
+  //const result = await Axios.get(url);
+  //const menu =  result.data
+
+  const res = await fetch(url);
+ 
+  const video = await res.json();
+
+  //  const res = await fetch('https://.../posts')
+  // const posts = await res.json()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      video,
+  
+    },
+    revalidate: 1,
+  };
+}
+export default Casa

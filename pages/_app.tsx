@@ -3,12 +3,15 @@ import { AnimatePresence ,AnimateSharedLayout} from "framer-motion";
 import type { AppProps } from 'next/app'
 import {Provider} from "react-redux"
 import { store } from '../store/index'
+import Header from '../components/Header';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps ,router}: AppProps) {
   return <Provider store={store}>
-    <AnimateSharedLayout >
-  <Component {...pageProps} />
-  </AnimateSharedLayout>
+<Header></Header>
+      <AnimatePresence    exitBeforeEnter >
+  <Component key={router.route} {...pageProps} />
+  </AnimatePresence>
+ 
   </Provider>
 }
 

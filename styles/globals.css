@@ -146,7 +146,7 @@ li {
   position: relative;
   border-radius: 20px;
   background: #1c1c1e;
-  /* overflow: hidden; */
+   overflow: hidden; 
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -168,12 +168,12 @@ li {
 }
 
 .card-image-container {
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
-  /* overflow: hidden; */
-  height: 420px;
-  width: 100vw;
+  overflow: hidden;*/
+  height: 100%;
+  width: 100%;   
 }
 
 .open .card-image-container,
@@ -239,6 +239,20 @@ p {
   font-size: 20px;
   line-height: 28px;
 }
+.video{
+width: 100%;
+height: 100%;
+}
+.video_player{
+  height: 100%!important;
+  width:100% !important;
+}
+.video_player video{
+  object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
 
 @media only screen and (max-width: 800px) {
   .card {
@@ -251,9 +265,17 @@ p {
     flex: 0 0 50%;
     max-width: 50%;
   }
+  /* .video_player{
+    height: unset !important;
+    width: 115% !important;
+  } */
 }
 
 @media only screen and (max-width: 600px) {
+  /* .video_player{
+    height: unset !important;
+    width: 600px !important;
+  } */
   .card {
     flex: 1 0 100%;
     max-width: 100%;
