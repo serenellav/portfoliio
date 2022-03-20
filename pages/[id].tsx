@@ -35,12 +35,12 @@ const Post = () => {
     console.log("ciao")
     window.onpopstate = () => { 
 
-   
+     
        navigate()
     };
   },[])
 
-  return <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}  className="div">
+  return <motion.div  className="div">
     <div>
       <div >
         <Video src={item?.acf.link}></Video>

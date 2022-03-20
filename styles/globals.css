@@ -30,7 +30,8 @@ body {
 }
 
 .overflow-hidden{
-  overflow-y: hidden !important;
+ position: fixed;
+
 
 }
 
