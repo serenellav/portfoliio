@@ -35,8 +35,7 @@ const Post = () => {
     console.log("ciao")
     window.onpopstate = () => { 
 
-      const contenuto = document.querySelector("body");
-       contenuto?.setAttribute("class", "overflow-hidden");
+   
        navigate()
     };
   },[])

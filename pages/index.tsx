@@ -23,8 +23,6 @@ const {data} =useAppSelector(cartSelector)
 
   React.useEffect(()=>{
 dispatch(setData(video))
-const contenuto = document.querySelector("body");
-contenuto?.classList.remove("overflow-hidden");
 
   },[video])
   return (
