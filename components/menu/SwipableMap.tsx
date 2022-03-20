@@ -24,7 +24,7 @@ const SwipableMap: React.FC<Props> = ({ id, title, category, theme, isSelected ,
     return (
  <>
  <LocationOnOutlinedIcon
- sx={{ color: "#fff" }}
+ sx={{ color: "#fff",fontSize: 35  }}
  className="map"
  onClick={()=>setOpen(true)}
  ></LocationOnOutlinedIcon>

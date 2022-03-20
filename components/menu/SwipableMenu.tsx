@@ -24,7 +24,7 @@ const SwipableMenu: React.FC<Props> = ({ id, title, category, theme, isSelected 
     return (
  <>
  <MenuRoundedIcon 
- sx={{ color: "#fff" }}
+ sx={{ color: "#fff",fontSize: 35 }}
  className="menu"
  onClick={()=>setOpen(true)}
  ></MenuRoundedIcon >
