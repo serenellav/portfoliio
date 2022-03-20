@@ -1,5 +1,6 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
+import { GetStaticPaths, GetStaticPropsResult, NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -10,13 +11,20 @@ import Video from '../components/Video'
 import { cartSelector } from '../store/cart.slice'
 import { useAppSelector } from '../store/hooks'
 
-const Post = () => {
+interface Props {
+
+  video?:any[],
+
+}
+
+const Post: NextPage<Props> = ({video}) =>  {
   const router = useRouter()
   const { id } = router.query
 
   const { data } = useAppSelector(cartSelector)
   // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
-  const item = data.find(item => item.id.toString() === id);
+  const item = 
+   video?.find(item => item.id.toString() === id);
 
   // React.useEffect(()=>{
   //   const contenuto = document.querySelector("body");
@@ -104,6 +112,43 @@ const Post = () => {
   </motion.div>
 
 
+}
+export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
+
+  return {
+      paths: [], //indicates that no page needs be created at build time
+      fallback: 'blocking' //indicates the type of fallback
+  }
+}
+
+export async function getStaticProps(): Promise<GetStaticPropsResult<Props>>  {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+
+ 
+
+  const url =
+  "https://www.dariovettura.com/dance/wp-json/wp/v2/posts?_embed";
+
+  //const result = await Axios.get(url);
+  //const menu =  result.data
+
+  const res = await fetch(url);
+ 
+  const video = await res.json();
+
+  //  const res = await fetch('https://.../posts')
+  // const posts = await res.json()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      video,
+  
+    },
+    revalidate: 1,
+  };
 }
 
 export default Post
