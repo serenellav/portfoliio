@@ -39,7 +39,9 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
                     <Video  src={item?.acf.link}></Video>
                   {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
               </div>
-              <div
+            
+          </div>
+          <div
                   className="title-container"
                 
               >
@@ -51,7 +53,6 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
                    
                  
               </div>
-          </div>
       </div>
 
       </a>

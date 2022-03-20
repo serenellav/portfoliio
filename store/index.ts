@@ -13,6 +13,7 @@ import cartSlice from './cart.slice';
   // This is where we add reducers.
   // Since we don't have any yet, leave this empty
     },
+    
   });
   
   export type AppDispatch = typeof store.dispatch;
