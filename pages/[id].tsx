@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { CardSelected } from '../components/CardSelected'
-import  Home  from '../components/Home'
+import Home from '../components/Home'
 import { Selected } from '../components/Selected'
 import Video from '../components/Video'
 import { cartSelector } from '../store/cart.slice'
@@ -12,7 +12,7 @@ import { useAppSelector } from '../store/hooks'
 
 const Post = () => {
   const router = useRouter()
- const { id } = router.query
+  const { id } = router.query
 
   const { data } = useAppSelector(cartSelector)
   // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
@@ -23,67 +23,71 @@ const Post = () => {
   //   contenuto?.setAttribute("class", "overflow-hidden");
   // },[])
 
-  return    <motion.div key={2}  initial={{x:1000}} animate={{ x:0}} exit={{ x:1000}}   transition={{ type: 'linear' }}className="div">
-<div>
-  <div  >
-                <Video src={item?.acf.link}></Video>
-                {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
-            </div>
-            <div
-                className="title-container" >
-                <span className="category">
-                    {item?._embedded["wp:term"][0][0].name}
-                </span>
-                <h2>{item?.title.rendered}</h2>
-            </div>
+  React.useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
 
-            <div className="content-container" >
-                <p style={{}}>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias odit eum beatae eius laboriosam, numquam repellat aspernatur nisi omnis provident inventore nobis unde
-                    quibusdam dolorem aliquid
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-                    aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-                    v</p>
+  return <motion.div key={2} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ type: 'linear' }} className="div">
+    <div>
+      <div >
+        <Video src={item?.acf.link}></Video>
+      
+      </div>
+      <div
+        className="title-container" >
+        <span className="category">
+          {item?._embedded["wp:term"][0][0].name}
+        </span>
+        <h2>{item?.title.rendered}</h2>
+      </div>
+
+      <div className="content-container" >
+        <p style={{}}>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias odit eum beatae eius laboriosam, numquam repellat aspernatur nisi omnis provident inventore nobis unde
+          quibusdam dolorem aliquid
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
+          aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
+          v</p>
 
 
-                <Link href="/" scroll={false} >
-                    <a >back</a>
-                </Link>
-            </div>
-            </div>
+        <Link href="/" scroll={false} >
+          <a >back</a>
+        </Link>
+      </div>
+    </div>
   </motion.div>
 
 
