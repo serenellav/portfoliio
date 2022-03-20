@@ -23,8 +23,10 @@ const {data} =useAppSelector(cartSelector)
 
   React.useEffect(()=>{
 dispatch(setData(video))
+const contenuto = document.querySelector("body");
+contenuto?.classList.remove("overflow-hidden");
 
-  },[])
+  },[video])
   return (
   
     <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}  id="card-list-container" >

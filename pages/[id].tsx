@@ -22,11 +22,23 @@ const Post = () => {
   //   const contenuto = document.querySelector("body");
   //   contenuto?.setAttribute("class", "overflow-hidden");
   // },[])
+  async function navigate() {
+    router.push({
+      pathname: "/",
+    
+    }, undefined, { scroll: false });
+  }
 
   React.useEffect(()=>{
     window.scrollTo(0, 0);
   
     console.log("ciao")
+    window.onpopstate = () => { 
+
+      const contenuto = document.querySelector("body");
+       contenuto?.setAttribute("class", "overflow-hidden");
+       navigate()
+    };
   },[])
 
   return <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}  className="div">
@@ -40,7 +52,7 @@ const Post = () => {
         <span className="category">
           {item?._embedded["wp:term"][0][0].name}
         </span>
-        <h2>{item?.title.rendered}</h2>
+        <h2 onClick={()=>navigate()}>{item?.title.rendered}</h2>
       </div>
 
       <div className="content-container" >

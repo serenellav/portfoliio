@@ -10,7 +10,7 @@ const Header = (): JSX.Element => (
         text-black dark:text-white
     "
     >
-        <Link href="/" scroll={false}>
+        <Link href="/" >
             <a>
                 <span className="show sm:hide">JW</span>
                 <span className="hide sm:show">James Wallis</span>
