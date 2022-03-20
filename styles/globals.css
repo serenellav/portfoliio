@@ -30,7 +30,7 @@ body {
 }
 .MuiDrawer-paper {
   width: 300px;
-  background-color: #1c1c1e;
+  background-color: #1c1c1e !important;
 }
 .PrivateSwipeArea-root {
   width: unset !important;

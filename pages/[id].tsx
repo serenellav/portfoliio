@@ -48,7 +48,7 @@ const Post: NextPage<Props> = ({ video }) => {
     };
   }, [])
 
-  return <motion.div className="div">
+  return <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }}  transition={{ type: 'spring', velocity: 50 }} className="div">
     <div className="hero-post">
       <div className="card-content-container"  >
         <div className="card-content post-content">

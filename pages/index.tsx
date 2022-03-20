@@ -27,7 +27,7 @@ dispatch(setData(video))
   },[video])
   return (
   
-    <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}  id="card-list-container" >
+    <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}  transition={{ type: 'spring', velocity: 50 }}  id="card-list-container" >
        
         <ul className="card-list">
             {video?.map(item => (
