@@ -40,7 +40,7 @@ const Post = () => {
     };
   },[])
 
-  return <motion.div  className="div">
+  return <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }}   className="div">
     <div>
       <div >
         <Video src={item?.acf.link}></Video>
