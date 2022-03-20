@@ -24,10 +24,12 @@ const Post = () => {
   // },[])
 
   React.useEffect(()=>{
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+  
+    console.log("ciao")
   },[])
 
-  return <motion.div key={2} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ type: 'linear' }} className="div">
+  return <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}  className="div">
     <div>
       <div >
         <Video src={item?.acf.link}></Video>
