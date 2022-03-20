@@ -28,11 +28,52 @@ body {
   --secondary: rgb(161, 161, 161);
   --divider: #343434;
 }
+.MuiDrawer-paper {
+  width: 300px;
+  background-color: #1c1c1e;
+}
+.PrivateSwipeArea-root {
+  width: unset !important;
+}
+.close-menu {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  right: 5px;
+  top: 5px;
+  font-weight: 800;
+}
+.close-map {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  left: 5px;
+  top: 5px;
+  font-weight: 800;
+}
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  justify-content: center;
+}
 
-.overflow-hidden{
- position: fixed;
+.header .logo img {
+  width: 100%;
+}
+.header .menu {
+  margin-right: auto;
+  margin-left: 5px;
+}
+.header .map {
+  margin-left: auto;
+  margin-right: 5px;
+}
 
-
+.overflow-hidden {
+  position: fixed;
 }
 
 * {
@@ -68,11 +109,6 @@ h1 {
   color: var(--secondary);
   font-size: 14px;
   text-transform: uppercase;
-}
-
-header {
-  border-bottom: 1px solid var(--divider);
-  position: relative;
 }
 
 .avatar {
@@ -128,9 +164,9 @@ li {
 .card-content-container {
   width: 100%;
   height: 100%;
+  margin-top: 40px;
   position: relative;
   display: block;
- 
 }
 
 .card-content-container.open {
@@ -139,7 +175,7 @@ li {
   right: 0;
   position: absolute;
   z-index: 11;
- overflow-y: scroll;
+  overflow-y: scroll;
   padding: 40px 0;
 }
 
@@ -148,7 +184,7 @@ li {
   position: relative;
   border-radius: 20px;
   background: #1c1c1e;
-   overflow: hidden; 
+  overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -158,7 +194,6 @@ li {
   height: auto;
   max-width: 700px;
   /* overflow: hidden; */
- 
 }
 
 .card-open-link {
@@ -175,7 +210,7 @@ li {
   left: 0;
   overflow: hidden;*/
   height: 100%;
-  width: 100%;   
+  width: 100%;
 }
 
 .open .card-image-container,
@@ -241,19 +276,18 @@ p {
   font-size: 20px;
   line-height: 28px;
 }
-.video{
-width: 100%;
-height: 100%;
+.video {
+  width: 100%;
+  height: 100%;
 }
-.video_player{
-  height: 100%!important;
-  width:100% !important;
+.video_player {
+  height: 100% !important;
+  width: 100% !important;
 }
-.video_player video{
+.video_player video {
   object-fit: cover;
-    width: 100%;
-    height: 100%;
-
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -274,6 +308,9 @@ height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
+  .MuiDrawer-paper {
+    width: 90vw;
+  }
   /* .video_player{
     height: unset !important;
     width: 600px !important;
