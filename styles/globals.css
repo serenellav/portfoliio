@@ -137,8 +137,8 @@ li {
   margin: 0;
 }
 .hero-post {
-  display: flex;
-  height: 60vh;
+ padding-top: 45px;
+  height: 480px;
 }
 .post-content-container {
   margin-top: 80px;
@@ -146,6 +146,9 @@ li {
 .post-content {
   border-bottom-left-radius: 0% !important;
   border-bottom-right-radius: 0% !important;
+}
+#card-list-container{
+  padding-top: 45px;
 }
 .card-list {
   display: flex;
@@ -176,9 +179,9 @@ li {
 }
 
 .card-content-container {
+  
   width: 100%;
   height: 100%;
-  margin-top: 40px;
   position: relative;
   display: block;
 }
@@ -328,9 +331,7 @@ p {
   .header .logo img {
     width: 70%;
   }
-  .hero-post {
-    height: 80vh;
-  }
+  
 
   /* .video_player{
     height: unset !important;
