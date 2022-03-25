@@ -40,12 +40,12 @@ const Post: NextPage<Props> = ({ video }) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
 
-    // console.log("ciao")
-    // window.onpopstate = () => {
+    
+    window.onpopstate = () => {
 
 
-    //   navigate()
-    // };
+      navigate()
+    };
   }, [])
 
   return <div className="root">
