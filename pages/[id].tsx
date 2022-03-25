@@ -40,21 +40,23 @@ const Post: NextPage<Props> = ({ video }) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
 
-    console.log("ciao")
-    window.onpopstate = () => {
+    // console.log("ciao")
+    // window.onpopstate = () => {
 
 
-      navigate()
-    };
+    //   navigate()
+    // };
   }, [])
 
-  return <motion.div initial={{ opacity:0 ,y:50}} animate={{ opacity:1 ,y:0}}  transition={{ velocity: 50 }} className="div">
+  return <div className="root">
+  <motion.div initial={{ opacity:0 ,y:50}} animate={{ opacity:1 ,y:0}}  transition={{ velocity: 50 }} className="post-container">
     <div className="hero-post">
       <div className="card-content-container"  >
         <div className="card-content post-content">
           <div className="card-image-container" >
-            <Video src={item?.acf.link}></Video>
-            {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
+            <div className="img-overlay"></div>
+          <img className="card-image" src={item?.acf?.anteprima} alt="" /> 
+           
           </div>
         </div>
         <div className="title-container"  >
@@ -65,67 +67,10 @@ const Post: NextPage<Props> = ({ video }) => {
         </div>
       </div>
     </div>
-    {/* <div >
-        <Video src={item?.acf.link}></Video>
-      
-      </div>
-      <div
-        className="title-container" >
-        <span className="category">
-          {item?._embedded["wp:term"][0][0].name}
-        </span>
-        <h2 onClick={()=>navigate()}>{item?.title.rendered}</h2>
-      </div> */}
-
-    <div className='post-content-container' >
-      <p style={{}}>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias odit eum beatae eius laboriosam, numquam repellat aspernatur nisi omnis provident inventore nobis unde
-        quibusdam dolorem aliquid
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Dignissimos, dolor eaque iure commodi dolore officiis placeat animi ea pr
-        aesentium in vitae non pariatur nam molestias odio temporibus facilis accusamus rem?
-        v</p>
-
-
-      <Link href="/" scroll={false} >
-        <a >back</a>
-      </Link>
-    </div>
-
+  
+    <div className='post-content-container'   dangerouslySetInnerHTML={{__html: item?.content.rendered }} />
   </motion.div>
-
+  </div>
 
 }
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
@@ -143,7 +88,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
 
 
   const url =
-    "https://www.dariovettura.com/dance/wp-json/wp/v2/posts?_embed";
+  "https://www.dariovettura.com/postfolio/wp-json/wp/v2/posts?_embed&per_page=100";
 
   //const result = await Axios.get(url);
   //const menu =  result.data

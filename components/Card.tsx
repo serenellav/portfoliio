@@ -36,8 +36,8 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
                   className="card-image-container"
                  
               >
-                    <Video  src={item?.acf.link}></Video>
-                  {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
+                 <div className="img-overlay"></div>
+                   <img className="card-image" src={item?.acf?.anteprima} alt="" /> 
               </div>
             
           </div>

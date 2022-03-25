@@ -1,6 +1,7 @@
 import React from "react";
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 
 
 
@@ -37,7 +38,12 @@ onOpen={()=>setOpen(true)}
 >
 <div 
 onClick={()=>setOpen(false)}
-className="close-menu">X</div>
+className="close-menu">
+     <ArrowCircleLeftOutlinedIcon 
+ sx={{ color: "#fff",fontSize: 35 }}
+ className="menu"
+ onClick={()=>setOpen(true)}
+ ></ArrowCircleLeftOutlinedIcon ></div>
 </SwipeableDrawer>
 
  </>

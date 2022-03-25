@@ -1,6 +1,7 @@
 import Link from "next/link"
-import SwipableMap from "./menu/SwipableMap"
+
 import SwipableMenu from "./menu/SwipableMenu"
+import SwipableInfo from "./menu/SwipableInfo"
 
 
 const Header = (): JSX.Element => (
@@ -11,12 +12,10 @@ const Header = (): JSX.Element => (
         <SwipableMenu/>
         <Link href="/" >
             <a>
-              <div className="logo">
-              <img src="./logo-home-web-6.png" alt="" />
-              </div>
+            <h1 style={{fontWeight:"800",margin:0}}>PORT<span style={{color:"#ff8800"}}>FOLIO</span></h1>
             </a>
         </Link>
-      <SwipableMap/>
+      <SwipableInfo/>
     </header>
 )
 
