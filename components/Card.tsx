@@ -25,9 +25,9 @@ const Card: React.FC<Props> = ({  item }) => {
 						</div>
 						<div className="title-container"   >
 							<span className="category">
-								{item._embedded["wp:term"][0][0].name}
+								{item?._embedded["wp:term"][0][0]?.name}
 							</span>
-							<h2>{item.title.rendered}</h2>
+							<h2>{item?.title?.rendered}</h2>
 						</div>
 					</div>
 

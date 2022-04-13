@@ -40,7 +40,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
 
-
+  
 
   const url =
     "https://paolominopoli.altervista.org/wp-json/wp/v2/posts?_embed&per_page=100";

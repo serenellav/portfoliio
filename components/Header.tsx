@@ -11,7 +11,7 @@ const Header = (): JSX.Element => (
     >
        
         <Link href="/" >
-            <a>
+            <a> 
             <h1 style={{fontWeight:"800",margin:0}}>PORT<span style={{color:"#ff8800"}}>FOLIO</span></h1>
             </a>
         </Link>
