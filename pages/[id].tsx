@@ -1,13 +1,8 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 import { GetStaticPaths, GetStaticPropsResult, NextPage } from 'next'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { CardSelected } from '../components/CardSelected'
-import Home from '../components/Home'
-import { Selected } from '../components/Selected'
-import Video from '../components/Video'
 import { cartSelector } from '../store/cart.slice'
 import { useAppSelector } from '../store/hooks'
 
@@ -54,8 +49,8 @@ const Post: NextPage<Props> = ({ video }) => {
       <div className="card-content-container"  >
         <div className="card-content post-content">
           <div className="card-image-container" >
-            <div className="img-overlay"></div>
-          <img className="card-image" src={item?.acf?.anteprima} alt="" /> 
+           
+          <img className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : "" } alt="" /> 
            
           </div>
         </div>
@@ -88,7 +83,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
 
 
   const url =
-  "https://www.dariovettura.com/postfolio/wp-json/wp/v2/posts?_embed&per_page=100";
+  "https://paolominopoli.altervista.org/wp-json/wp/v2/posts?_embed&per_page=100";
 
   //const result = await Axios.get(url);
   //const menu =  result.data

@@ -9,13 +9,13 @@ const Header = (): JSX.Element => (
     className="header"
   
     >
-        <SwipableMenu/>
+       
         <Link href="/" >
             <a>
             <h1 style={{fontWeight:"800",margin:0}}>PORT<span style={{color:"#ff8800"}}>FOLIO</span></h1>
             </a>
         </Link>
-      <SwipableInfo/>
+        <SwipableMenu/>
     </header>
 )
 
