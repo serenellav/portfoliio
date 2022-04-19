@@ -102,7 +102,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
       video,
 
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
 

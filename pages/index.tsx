@@ -14,7 +14,7 @@ interface Props {
 
 const Casa: NextPage<Props> = ({ post }) => {
   const { data } = useAppSelector(cartSelector)
-  console.log(data)
+  console.log({post})
 
   const dispatch = useAppDispatch()
 
@@ -62,7 +62,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
       post,
 
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
 export default Casa
