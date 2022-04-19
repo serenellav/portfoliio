@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import SwipableMenu from "./menu/SwipableMenu"
 import SwipableInfo from "./menu/SwipableInfo"
+import Logo from "./menu/Logo"
 
 
 const Header = (): JSX.Element => (
@@ -10,13 +11,7 @@ const Header = (): JSX.Element => (
   
     >
        
-        <Link href="/" >
-            <a> 
-            <h1 style={{fontWeight:"800",margin:0}}>PAOLO
-            <span style={{color:"#ff8800"}}>MINOPOLI</span>
-            </h1>
-            </a>
-        </Link>
+      <Logo></Logo>
         <SwipableMenu/>
     </header>
 )

@@ -23,12 +23,12 @@ const Card: React.FC<Props> = ({  item }) => {
 								<img className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
 							</div>
 						</div>
-						<div className="title-container"   >
+						{/* <div className="title-container"   >
 							<span className="category">
 								{item?._embedded["wp:term"][0][0]?.name}
 							</span>
 							<h2>{item?.title?.rendered}</h2>
-						</div>
+						</div> */}
 					</div>
 
 				</a>

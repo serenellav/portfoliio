@@ -1,6 +1,8 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 import { GetStaticPaths, GetStaticPropsResult, NextPage } from 'next'
+import { imageOptimizer } from 'next/dist/server/image-optimizer'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { cartSelector } from '../store/cart.slice'
@@ -55,15 +57,15 @@ const Post: NextPage<Props> = ({ video }) => {
           </div>
         </div>
         <div className="title-container"  >
-          <span className="category">
-            {item?._embedded["wp:term"][0][0].name}
-          </span>
-          <h2>{item?.title.rendered}</h2>
+         
+       
         </div>
       </div>
     </div>
-  
+    <h2>{item?.title.rendered}</h2>
     <div className='post-content-container'   dangerouslySetInnerHTML={{__html: item?.content.rendered }} />
+    {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined,i: any) =>
+     <img key={i} src={el} alt=""  style={{width:"100%",height:"auto"}}/>  )}
   </motion.div>
   </div>
 

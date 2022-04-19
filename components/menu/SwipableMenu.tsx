@@ -3,6 +3,8 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import { GetStaticPropsResult } from "next";
+import InfoTab from "./InfoTab";
+import { Avatar } from "@mui/material";
 
 
 
@@ -19,13 +21,15 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
 
     return (
         <>
-            <MenuRoundedIcon
+            {/* <MenuRoundedIcon
                 sx={{ color: "#fff", fontSize: 35 }}
                 className="menu"
                 onClick={() => setOpen(true)}
-            ></MenuRoundedIcon >
+            ></MenuRoundedIcon > */}
+             <Avatar className="menu" alt="Paolo Minopoli" src="./avatar-paolo.png" onClick={() => setOpen(true)}/>
 
             <SwipeableDrawer
+           
                 anchor="left"
                 open={open}
                 onClose={() => setOpen(false)}
@@ -39,6 +43,8 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                         className="menu"
                         onClick={() => setOpen(true)}
                     ></ArrowCircleLeftOutlinedIcon ></div>
+                    <span style={{marginTop:"20px"}}></span>
+                    <InfoTab></InfoTab>
             </SwipeableDrawer>
 
         </>
