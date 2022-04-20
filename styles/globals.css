@@ -28,11 +28,17 @@ body {
   --secondary: rgb(161, 161, 161);
   --divider: #343434;
 }
-.MuiDrawer-paper {
+.menu-swipe .MuiDrawer-paper {
   width: 300px;
   background-color: #000 !important;
 }
-
+.model-swipe .MuiDrawer-paper {
+  width: 100%;
+  height: 97vh;
+  background-color: #000 !important;
+}
+.sketchfab-embed-wrapper, .sk-frame-wrapper ,.sk-frame-wrapper iframe{width: 100%;height: 100%;}
+.open-model-btn{background-color: #008069;color: white;}
 .root {
   display: flex;
   padding: 5px;
@@ -346,6 +352,14 @@ p {
 }
 
 @media only screen and (min-width: 1200px) {
+  .model-swipe, .model-swipe .MuiBackdrop-root {left:300px}
+ 
+  .model-swipe .MuiDrawer-paper {
+    width: calc(100% - 300px);
+    height: 97vh;
+    background-color: #000 !important;
+    margin-left: auto;
+}
   .hero-post{padding-top: 20px;}
   #card-list-container{padding-top: 0px;}
   .sidebar {

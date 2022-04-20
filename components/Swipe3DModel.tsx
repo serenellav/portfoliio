@@ -1,21 +1,21 @@
 import React from "react";
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import ArrowCircleDownRoundedIcon from '@mui/icons-material/ArrowCircleDownRounded';
 import { GetStaticPropsResult } from "next";
-import InfoTab from "./InfoTab";
-import { Avatar } from "@mui/material";
+
+import { Avatar, Button } from "@mui/material";
 
 
 
 interface Props {
    
-		post?: any[],
+		embed?: string,
 
 }
 
 
-const SwipableMenu: React.FC<Props> = ({ post }) => {
+const Swipe3DModel: React.FC<Props> = ({ embed="" }) => {
 
     const [open, setOpen] = React.useState(false)
 
@@ -26,11 +26,11 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                 className="menu"
                 onClick={() => setOpen(true)}
             ></MenuRoundedIcon > */}
-             <Avatar className="menu" alt="Paolo Minopoli" src="./avatar-paolo.png" onClick={() => setOpen(true)}/>
+             <Button className="open-model-btn" onClick={() => setOpen(true)}>SEE IN ACTION</Button>
 
             <SwipeableDrawer
-           className="menu-swipe"
-                anchor="left"
+           className="model-swipe"
+                anchor="bottom"
                 open={open}
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
@@ -38,13 +38,13 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                 <div
                     onClick={() => setOpen(false)}
                     className="close-menu">
-                    <ArrowCircleLeftOutlinedIcon
+                    <ArrowCircleDownRoundedIcon
                         sx={{ color: "#fff", fontSize: 35 }}
                         className="menu"
                         onClick={() => setOpen(true)}
-                    ></ArrowCircleLeftOutlinedIcon ></div>
+                    ></ArrowCircleDownRoundedIcon ></div>
                     <span style={{marginTop:"20px"}}></span>
-                    <InfoTab></InfoTab>
+                    <div className='sk-frame-wrapper'   dangerouslySetInnerHTML={{__html: embed}} />
             </SwipeableDrawer>
 
         </>
@@ -53,4 +53,4 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
 
 
 
-export default SwipableMenu;
+export default Swipe3DModel;
