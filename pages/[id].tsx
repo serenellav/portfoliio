@@ -66,7 +66,7 @@ const Post: NextPage<Props> = ({ video }) => {
       <div style={{display:"flex",gap:"30px"}}>
         <h2>{item?.title.rendered}</h2>
 
-        {item.acf.embed && <Swipe3DModel embed={item.acf.embed}></Swipe3DModel>}
+        {item?.acf?.embed && <Swipe3DModel embed={item.acf.embed}></Swipe3DModel>}
       </div>
 
       <div className='post-content-container' dangerouslySetInnerHTML={{ __html: item?.content.rendered }} />
