@@ -18,6 +18,17 @@ const Casa: NextPage<Props> = ({ post }) => {
 
   const dispatch = useAppDispatch()
 
+
+  React.useEffect(() => {
+  
+
+
+    window.onpopstate = () => {
+
+
+     
+    };
+  }, [])
   React.useEffect(() => {
     dispatch(setData(post))
 
