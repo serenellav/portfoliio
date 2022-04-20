@@ -37,8 +37,17 @@ body {
   height: 97vh;
   background-color: #000 !important;
 }
-.sketchfab-embed-wrapper, .sk-frame-wrapper ,.sk-frame-wrapper iframe{width: 100%;height: 100%;}
-.open-model-btn{background-color: #008069 !important;color: white !important;}
+.sketchfab-embed-wrapper,
+.sk-frame-wrapper,
+.sk-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+.open-model-btn {
+  background-color: #008069 !important;
+  color: white !important;
+  margin-left: 30px !important;
+}
 .root {
   display: flex;
   padding: 5px;
@@ -71,18 +80,16 @@ body {
 .sidebar {
   display: none;
 }
-.infoTab{
+.infoTab {
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.avatar-container .MuiAvatar-root{
-height: 220px;
-width: 220px;
-
+.avatar-container .MuiAvatar-root {
+  height: 220px;
+  width: 220px;
 }
-
 
 .header {
   padding: 5px;
@@ -352,16 +359,23 @@ p {
 }
 
 @media only screen and (min-width: 1200px) {
-  .model-swipe, .model-swipe .MuiBackdrop-root {left:300px}
- 
+  .model-swipe,
+  .model-swipe .MuiBackdrop-root {
+    left: 300px;
+  }
+
   .model-swipe .MuiDrawer-paper {
     width: calc(100% - 300px);
     height: 97vh;
     background-color: #000 !important;
     margin-left: auto;
-}
-  .hero-post{padding-top: 20px;}
-  #card-list-container{padding-top: 0px;}
+  }
+  .hero-post {
+    padding-top: 20px;
+  }
+  #card-list-container {
+    padding-top: 0px;
+  }
   .sidebar {
     flex-direction: column;
     padding: 10px;
