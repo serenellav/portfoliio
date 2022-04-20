@@ -44,6 +44,16 @@ body {
   height: 100%;
   padding-top: 10px;
 }
+.loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+.loader svg{height: 140px;width: 140px;}
 .open-model-btn {
   background-color: #008069 !important;
   color: white !important;

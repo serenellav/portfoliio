@@ -5,6 +5,7 @@ import ArrowCircleDownRoundedIcon from '@mui/icons-material/ArrowCircleDownRound
 import { GetStaticPropsResult } from "next";
 
 import { Avatar, Button } from "@mui/material";
+import { Rings } from "react-loader-spinner";
 
 
 
@@ -44,6 +45,7 @@ const Swipe3DModel: React.FC<Props> = ({ embed="" }) => {
                         onClick={() => setOpen(true)}
                     ></ArrowCircleDownRoundedIcon ></div>
                     <span style={{marginTop:"20px"}}></span>
+                    <Rings  wrapperClass="loader" color="#008069" ariaLabel="loading-indicator" />
                     <div className='sk-frame-wrapper'   dangerouslySetInnerHTML={{__html: embed}} />
             </SwipeableDrawer>
 
