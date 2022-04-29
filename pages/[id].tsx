@@ -5,6 +5,7 @@ import { imageOptimizer } from 'next/dist/server/image-optimizer'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
+import ContentLayout from '../components/ContentsLayout'
 import Swipe3DModel from '../components/Swipe3DModel'
 import { cartSelector } from '../store/cart.slice'
 import { useAppSelector } from '../store/hooks'
@@ -35,6 +36,9 @@ const Post: NextPage<Props> = ({ video }) => {
     }, undefined, { scroll: false });
   }
 
+ 
+
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -47,6 +51,7 @@ const Post: NextPage<Props> = ({ video }) => {
   }, [])
 
   return <div className="root">
+  
     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ velocity: 50 }} className="post-container">
       <div className="hero-post">
         <div className="card-content-container"  >
@@ -72,6 +77,7 @@ const Post: NextPage<Props> = ({ video }) => {
       <div className='post-content-container' dangerouslySetInnerHTML={{ __html: item?.content.rendered }} />
       {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
         <img key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)}
+          <ContentLayout content={item}/>
     </motion.div>
   </div>
 

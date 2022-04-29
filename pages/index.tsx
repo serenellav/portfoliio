@@ -20,15 +20,9 @@ const Casa: NextPage<Props> = ({ post }) => {
 
 
   React.useEffect(() => {
-  
-
-
-    window.onpopstate = () => {
-
-
-     
-    };
+   window.onpopstate = () => { };
   }, [])
+  
   React.useEffect(() => {
     dispatch(setData(post))
 
@@ -59,7 +53,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   //const result = await Axios.get(url);
   //const menu =  result.data
 
-  const res = await fetch(url);
+  const res = await fetch(url,{method:'GET'});
 
   const post = await res.json();
 
