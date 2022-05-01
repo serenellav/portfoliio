@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from 'next/image'
 import Link from 'next/link'
 import ReactPlayer from "react-player";
 
@@ -27,7 +27,7 @@ const ContentLayout: React.FC<Props> = ({ content }) => {
 
 	const contentRender = (obj: any, i: number) => {
 		if (obj && obj.type && obj.type == "image")
-			return <div key={i} ><img src={obj.url} alt="" style={{ width: "100%", height: "auto" }} />
+			return <div key={i} ><Image src={obj.url} width="100%" alt="" height="auto" />
 			{obj.description &&	<p className='post-content-description'>{obj.description}</p>}</div>
 		if (obj && obj.type && obj.type == "video")
 			return <div key={i}><ReactPlayer

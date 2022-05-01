@@ -58,7 +58,7 @@ const Post: NextPage<Props> = ({ video }) => {
           <div className="card-content post-content">
             <div className="card-image-container" >
 
-              <img className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
+              <Image className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
 
             </div>
           </div>
@@ -74,7 +74,7 @@ const Post: NextPage<Props> = ({ video }) => {
       {item?.acf?.embed && <Swipe3DModel embed={item.acf.embed}></Swipe3DModel>}
       <div className='post-content-container' dangerouslySetInnerHTML={{ __html: item?.content.rendered }} />
       {/* {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
-        <img key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
+        <Image key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
       <ContentLayout content={item} />
     </motion.div>
   </div>

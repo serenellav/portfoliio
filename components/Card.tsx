@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image'
 
 import Link from 'next/link'
 
@@ -20,7 +21,7 @@ const Card: React.FC<Props> = ({  item }) => {
 						className="card-content-container">
 						<div className="card-content">
 							<div className="card-image-container"    >
-								<img className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
+								<Image className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
 							</div>
 						</div>
 						{/* <div className="title-container"   >
