@@ -10,8 +10,8 @@ import Image from "next/image";
 
 
 interface Props {
-   
-		post?: any[],
+
+    post?: any[],
 
 }
 
@@ -27,13 +27,12 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                 className="menu"
                 onClick={() => setOpen(true)}
             ></MenuRoundedIcon > */}
-             <Avatar className="menu" onClick={() => setOpen(true)}>
-         
-  <Image src="https://paolominopoli.vercel.app/avatar-paolo.png"  layout="fill" />
-</Avatar>
+            <Avatar className="menu" onClick={() => setOpen(true)}>
+                <Image src="https://paolominopoli.vercel.app/avatar-paolo.png" layout="fill" />
+            </Avatar>
 
             <SwipeableDrawer
-           className="menu-swipe"
+                className="menu-swipe"
                 anchor="left"
                 open={open}
                 onClose={() => setOpen(false)}
@@ -47,8 +46,8 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                         className="menu"
                         onClick={() => setOpen(true)}
                     ></ArrowCircleLeftOutlinedIcon ></div>
-                    <span style={{marginTop:"20px"}}></span>
-                    <InfoTab></InfoTab>
+                <span style={{ marginTop: "20px" }}></span>
+                <InfoTab></InfoTab>
             </SwipeableDrawer>
 
         </>
