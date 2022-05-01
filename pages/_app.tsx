@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         description="Creatore di modelli 3D"
         canonical="https://paolominopoli.vercel.app/"
         openGraph={{
+          type: 'website',
           url: "https://paolominopoli.vercel.app/",
           title: "Paolo Minopoli",
           description: "Creatore di modelli 3D",
