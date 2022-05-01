@@ -2,6 +2,7 @@ import React from "react";
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import ArrowCircleDownRoundedIcon from '@mui/icons-material/ArrowCircleDownRounded';
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import { GetStaticPropsResult } from "next";
 
 import { Avatar, Button } from "@mui/material";
@@ -27,7 +28,7 @@ const Swipe3DModel: React.FC<Props> = ({ embed="" }) => {
                 className="menu"
                 onClick={() => setOpen(true)}
             ></MenuRoundedIcon > */}
-             <Button className="open-model-btn" onClick={() => setOpen(true)}>SEE IN ACTION</Button>
+             <Button startIcon={<ViewInArIcon/>} className="open-model-btn" onClick={() => setOpen(true)}>SEE IN ACTION</Button>
 
             <SwipeableDrawer
            className="model-swipe"

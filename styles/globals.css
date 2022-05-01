@@ -57,7 +57,7 @@ body {
 .open-model-btn {
   background-color: #008069 !important;
   color: white !important;
-  margin-left: 30px !important;
+
 }
 .root {
   display: flex;
@@ -68,6 +68,10 @@ body {
 .post-container {
   max-width: 990px;
   flex: 1 1 100%;
+}
+.post-content-description{
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
 .PrivateSwipeArea-root {
   width: unset !important;
@@ -189,7 +193,7 @@ li {
 }
 .hero-post {
   padding-top: 45px;
-  height: 480px;
+  height: 240px;
 }
 .post-content-container {
   margin-top: 40px;
@@ -382,6 +386,7 @@ p {
     margin-left: auto;
   }
   .hero-post {
+    height: 480px;
     padding-top: 20px;
   }
   #card-list-container {
