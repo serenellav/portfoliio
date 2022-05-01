@@ -96,6 +96,7 @@ body {
   display: none;
 }
 .infoTab {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -399,7 +400,7 @@ p {
     z-index: 1;
     background-color: black;
     position: fixed;
-    width: 300px;
+    width: 360px;
     height: 100vh;
     display: flex;
     align-items: center;

@@ -4,26 +4,27 @@ import { GetStaticPaths, GetStaticPropsResult, NextPage } from 'next'
 import { imageOptimizer } from 'next/dist/server/image-optimizer'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContentLayout from '../components/ContentsLayout'
 import Swipe3DModel from '../components/Swipe3DModel'
-import { cartSelector } from '../store/cart.slice'
-import { useAppSelector } from '../store/hooks'
+import { cartSelector, setInfo } from '../store/cart.slice'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
 
 interface Props {
 
-  video?: any[],
+  posts?: any[],
+  infos?: any[]
 
 }
 
-const Post: NextPage<Props> = ({ video }) => {
+const Post: NextPage<Props> = ({ posts,infos }) => {
   const router = useRouter()
   const { id } = router.query
 
   const { data } = useAppSelector(cartSelector)
   // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
   const item =
-    video?.find(item => item.id.toString() === id);
+    posts?.find(item => item.id.toString() === id);
 
   // React.useEffect(()=>{
   //   const contenuto = document.querySelector("body");
@@ -36,19 +37,20 @@ const Post: NextPage<Props> = ({ video }) => {
     }, undefined, { scroll: false });
   }
 
-
+  const dispatch = useAppDispatch()
 
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
-
-
     window.onpopstate = () => {
-
-
       navigate()
     };
   }, [])
+
+  useEffect(() => {
+    dispatch(setInfo(infos))
+   },
+    [])
 
   return <div className="root">
 
@@ -59,7 +61,7 @@ const Post: NextPage<Props> = ({ video }) => {
             <div className="card-image-container" >
 
               <Image layout='fill' width={500}
-			height={500} className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
+                height={500} className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
 
             </div>
           </div>
@@ -93,14 +95,15 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
 
-
+  const infourl =
+    "https://paolominopoli.altervista.org/wp-json/wp/v2/informazioni?_embed&per_page=100";
 
   const url =
     "https://paolominopoli.altervista.org/wp-json/wp/v2/posts?_embed&per_page=100";
 
   //const result = await Axios.get(url);
   //const menu =  result.data
-
+  const infores = await fetch(infourl, { method: 'GET' });
   const res = await fetch(url, {
     method: 'GET',
 
@@ -108,7 +111,8 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
     headers: { Accept: 'application/json', 'Content-Type': 'application/json', },
   });
 
-  const video = await res.json();
+  const posts = await res.json();
+  const infos = await infores.json()
 
   //  const res = await fetch('https://.../posts')
   // const posts = await res.json()
@@ -117,7 +121,8 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   // will receive `posts` as a prop at build time
   return {
     props: {
-      video,
+      posts,
+      infos
 
     },
     revalidate: 10,

@@ -28,7 +28,7 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                 onClick={() => setOpen(true)}
             ></MenuRoundedIcon > */}
             <Avatar className="menu" onClick={() => setOpen(true)}>
-                <Image src="https://paolominopoli.vercel.app/avatar-paolo.png" layout="fill" />
+                <Image alt="Paolo Minopoli" src="https://paolominopoli.vercel.app/avatar-paolo.png" layout="fill" />
             </Avatar>
 
             <SwipeableDrawer

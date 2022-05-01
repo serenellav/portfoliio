@@ -1,6 +1,6 @@
 import type { GetStaticPropsResult, NextPage } from 'next'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { cartSelector, setData } from '../store/cart.slice'
+import { cartSelector, setData, setInfo } from '../store/cart.slice'
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Card from '../components/Card'
@@ -9,11 +9,12 @@ import Card from '../components/Card'
 interface Props {
 
   post?: any[],
+  infos?:any[]
 
 }
 
-const Casa: NextPage<Props> = ({ post }) => {
-  const { data } = useAppSelector(cartSelector)
+const Casa: NextPage<Props> = ({ post ,infos}) => {
+  const { data ,info } = useAppSelector(cartSelector)
   console.log({post})
 
   const dispatch = useAppDispatch()
@@ -24,9 +25,14 @@ const Casa: NextPage<Props> = ({ post }) => {
   }, [])
   
   React.useEffect(() => {
-    dispatch(setData(post))
-
+    dispatch(setData(post));
   }, [post])
+
+  React.useEffect(() => {
+       dispatch(setInfo(infos))
+ }, [])
+
+  console.log({info})
   return (
     <div className="root">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ velocity: 50 }} id="card-list-container" >
@@ -49,13 +55,17 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
 
   const url =
     "https://paolominopoli.altervista.org/wp-json/wp/v2/posts?_embed&per_page=100";
+    const infourl =
+    "https://paolominopoli.altervista.org/wp-json/wp/v2/informazioni?_embed&per_page=100";
 
   //const result = await Axios.get(url);
   //const menu =  result.data
 
   const res = await fetch(url,{method:'GET'});
+  const infores = await fetch(infourl,{method:'GET'});
 
   const post = await res.json();
+  const infos = await infores.json()
 
   //  const res = await fetch('https://.../posts')
   // const posts = await res.json()
@@ -65,6 +75,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   return {
     props: {
       post,
+      infos
 
     },
     revalidate: 10,
