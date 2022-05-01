@@ -28,16 +28,16 @@ const InfoTab: React.FC<Props> = ({ }) => {
             </Avatar>
         </div>
         <span style={{ marginTop: "10px" }}> <Logo ></Logo></span>
-        <div style={{ display: "flex", gap: "30px", marginTop: "10px" }}>
+        <div style={{ display: "flex",  marginTop: "10px" }}>
 
-            <Link href={info[0]?.acf.instagram ? info[0]?.acf.instagram : "/"}>
-                <InstagramIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer" }} />
+            <Link href={info[0]?.acf.instagram ? info[0]?.acf.instagram : "/"} >
+                <InstagramIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer",marginLeft:"15px" ,marginRight:"15px" }} />
             </Link>
             <Link href={info[0]?.acf.linkedin ? info[0]?.acf.linkedin : "/"}>
-                <LinkedInIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer" }}></LinkedInIcon>
+                <LinkedInIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer",marginLeft:"15px" ,marginRight:"15px" }}></LinkedInIcon>
             </Link>
             <Link href={info[0]?.acf.email ? info[0]?.acf.email : "/"}>
-                <MailOutlineRoundedIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer" }}></MailOutlineRoundedIcon>
+                <MailOutlineRoundedIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer",marginLeft:"15px" ,marginRight:"15px" }}></MailOutlineRoundedIcon>
             </Link>
         </div>
 
