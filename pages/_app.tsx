@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           description: "Creatore di modelli 3D",
           images: [
             {
-              url: "./avatar-paolo.png",
+              url: "https://paolominopoli.vercel.app/avatar-paolo.png",
               width: 800,
               height: 420,
               alt: "Paolo Minopoli",
