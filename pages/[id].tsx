@@ -58,7 +58,8 @@ const Post: NextPage<Props> = ({ video }) => {
           <div className="card-content post-content">
             <div className="card-image-container" >
 
-              <Image className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
+              <Image layout='fill' width={500}
+			height={500} className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
 
             </div>
           </div>
