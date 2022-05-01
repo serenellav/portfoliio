@@ -36,7 +36,7 @@ const Post: NextPage<Props> = ({ video }) => {
     }, undefined, { scroll: false });
   }
 
- 
+
 
 
   React.useEffect(() => {
@@ -51,7 +51,7 @@ const Post: NextPage<Props> = ({ video }) => {
   }, [])
 
   return <div className="root">
-  
+
     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ velocity: 50 }} className="post-container">
       <div className="hero-post">
         <div className="card-content-container"  >
@@ -68,14 +68,14 @@ const Post: NextPage<Props> = ({ video }) => {
           </div>
         </div>
       </div>
-      <div style={{display:"flex",gap:"30px"}}>
+      <div style={{ display: "flex", gap: "30px" }}>
         <h2>{item?.title.rendered}</h2>
-</div>
-{item?.acf?.embed && <Swipe3DModel embed={item.acf.embed}></Swipe3DModel>}
+      </div>
+      {item?.acf?.embed && <Swipe3DModel embed={item.acf.embed}></Swipe3DModel>}
       <div className='post-content-container' dangerouslySetInnerHTML={{ __html: item?.content.rendered }} />
-      {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
-        <img key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)}
-          <ContentLayout content={item}/>
+      {/* {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
+        <img key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
+      <ContentLayout content={item} />
     </motion.div>
   </div>
 
@@ -100,12 +100,12 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   //const result = await Axios.get(url);
   //const menu =  result.data
 
-  const res = await fetch(url,{
+  const res = await fetch(url, {
     method: 'GET',
- 
+
     credentials: "same-origin", //include, same-origin
-    headers: {Accept: 'application/json', 'Content-Type': 'application/json',},
-});
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json', },
+  });
 
   const video = await res.json();
 
