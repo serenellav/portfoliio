@@ -5,6 +5,7 @@ import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutl
 import { GetStaticPropsResult } from "next";
 import InfoTab from "./InfoTab";
 import { Avatar } from "@mui/material";
+import Image from "next/image";
 
 
 
@@ -26,7 +27,10 @@ const SwipableMenu: React.FC<Props> = ({ post }) => {
                 className="menu"
                 onClick={() => setOpen(true)}
             ></MenuRoundedIcon > */}
-             <Avatar className="menu" alt="Paolo Minopoli" src="./avatar-paolo.png" onClick={() => setOpen(true)}/>
+             <Avatar className="menu" onClick={() => setOpen(true)}>
+         
+  <Image src="https://paolominopoli.vercel.app/avatar-paolo.png"  layout="fill" />
+</Avatar>
 
             <SwipeableDrawer
            className="menu-swipe"

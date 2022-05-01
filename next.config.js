@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images:{
-    domains:['paolominopoli.altervista.org']
+    domains:['paolominopoli.altervista.org','paolominopoli.vercel.app']
   },
   i18n: {
     locales: ["it"],
