@@ -1,4 +1,5 @@
 import { Avatar } from "@mui/material"
+import Image from "next/image"
 import Link from "next/link"
 import Logo from "./Logo"
 
@@ -6,14 +7,17 @@ import Logo from "./Logo"
 
 const InfoTab = (): JSX.Element => (
     <div
-    className="infoTab"
-  
+        className="infoTab"
+
     >
         <div className="avatar-container">
-       <Avatar alt="Paolo Minopoli" src="./avatar-paolo.png" />
-       </div>
-       <span style={{marginTop:"10px"}}> <Logo ></Logo></span>
-    
+
+            <Avatar >
+                <Image alt="Paolo Minopoli" src="https://paolominopoli.vercel.app/avatar-paolo.png" layout="fill" />
+            </Avatar>
+        </div>
+        <span style={{ marginTop: "10px" }}> <Logo ></Logo></span>
+
     </div>
 )
 
