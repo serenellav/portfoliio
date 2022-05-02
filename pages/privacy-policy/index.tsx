@@ -37,41 +37,48 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
 
     return (
         <div className="root">
-            {/* <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
-                <br></br><br></br>
-                PRIVACY POLICY<br></br><br></br>
+            <div style={{display:"flex",flexDirection:"column"}}>
+            <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
+                
+                PRIVACY POLICY
                 I - INFORMAZIONI RELATIVE ALLA PRIVACY POLICY DEL SITO
                 1. In questa sezione sono contenute le informazioni relative alle modalità di gestione
                 di paolominopoli.vercel.app in riferimento al trattamento dei dati degli utenti di
-                paolominopoli.vercel.app.<br></br><br></br>
-
+                paolominopoli.vercel.app.
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 2. La presente informativa ha valore anche ai fini dell'articolo 13 del Regolamento
                 (UE) n. 2016/679, relativo alla protezione delle persone fisiche con riguardo al
                 trattamento dei dati personali nonché alla libera circolazione di tali dati, per i soggetti
                 che interagiscono con paolominopoli.vercel.app ed è raggiungibile all'indirizzo
                 corrispondente alla pagina iniziale:
-                www.paolominopoli.vercel.app<br></br><br></br>
+                www.paolominopoli.vercel.app
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 3. L'informativa è resa solo per paolominopoli.vercel.app e non anche per altri
                 siti web eventualmente consultati dall'utente tramite link in esso contenuti.
                 4. Scopo del presente documento è fornire indicazioni circa le modalità, i tempi e la
                 natura delle informazioni che i titolari del trattamento devono fornire agli utenti al
                 momento della connessione alle pagine web di paolominopoli.vercel.app,
                 indipendentemente dagli scopi del collegamento stesso, secondo la legislazione
-                Italiana ed Europea.<br></br><br></br>
+                Italiana ed Europea.
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 5. L'informativa può subire modifiche a causa dell'introduzione di nuove norme al
                 riguardo, si invita pertanto l'utente a controllare periodicamente la presente pagina.
                 6. Se l'utente ha meno di 14 anni, ai sensi dell'art.8, c.1 regolamento (UE) 2016/679,
                 e dell'Art. 2 - Quinquies del D.Lgs 196/2003, così come modificato dal D.Lgs 181/18,
                 dovrà legittimare il suo consenso attraverso l'autorizzazione dei genitori o di chi ne fa
-                le veci.<br></br><br></br>
-                II - TRATTAMENTO DEI DATI<br></br><br></br>
+                le veci.
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
+                II - TRATTAMENTO DEI DATI
                 1 - Titolare dei Dati
                 1. Il titolare del trattamento è la persona fisica o giuridica, l'autorità pubblica, il
                 servizio o altro organismo che, singolarmente o insieme ad altri, determina le finalità
-                e i mezzi del trattamento di dati personali. Si occupa anche dei profili sulla sicurezza.<br></br><br></br>
-
+                e i mezzi del trattamento di dati personali. Si occupa anche dei profili sulla sicurezza.
                 2. Relativamente al presente sito web il titolare del trattamento è: Paolo Minopoli , e per ogni chiarimento o esercizio dei diritti dell'utente potrà contattarlo al
-                seguente indirizzo mail: paolominopoli@gmail.com<br></br><br></br>
+                seguente indirizzo mail: paolominopoli@gmail.com
                 2 - Responsabile del trattamento dati
                 1. Il responsabile del trattamento è la persona fisica o giuridica, l'autorità pubblica, il
                 servizio o altro organismo che tratta dati personali per conto del titolare del
@@ -81,8 +88,10 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
 
                 2. In caso di necessità, i dati connessi al servizio newsletter possono essere trattati
                 dal responsabile del trattamento o soggetti da esso incaricati a tal fine presso la
-                relativa sede.<br></br><br></br>
-                III - COOKIES<br></br><br></br>
+                relativa sede.
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
+                III - COOKIES
                 1 - Tipo di Cookies
                 1. Il sito paolominopoli.vercel.app utilizza cookies per rendere l'esperienza di navigazione
                 dell'utente più facile ed intuitiva: i cookies sono piccole stringhe di testo utilizzate per
@@ -100,6 +109,8 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 servizi offerti potrebbe risultarne compromesso. Per procedere senza modificare le
                 opzioni relative ai cookies è sufficiente continuare con la navigazione.
                 Di seguito le tipologie di cookies di cui il sito fa uso:
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 2 - Cookies tecnici
                 1. Ci sono numerose tecnologie usate per conservare informazioni nel computer
                 dell'utente, che poi vengono raccolte dai siti. Tra queste la più conosciuta e utilizzata
@@ -107,6 +118,8 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 e la fruizione del sito da parte dell'utente. Sono necessari alla trasmissione di
                 comunicazioni su rete elettronica ovvero al fornitore per erogare il servizio richiesto
                 dal cliente.
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 2. Le impostazioni per gestire o disattivare i cookies possono variare a seconda del
                 browser internet utilizzato. Ad ogni modo, l'utente può gestire o richiedere la
                 disattivazione generale o la cancellazione dei cookies, modificando le impostazioni
@@ -130,8 +143,9 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 durata della navigazione fino alla chiusura del browser e svaniscono con la chiusura
                 dello stesso. Il loro uso è strettamente limitato alla trasmissione di identificativi di
                 sessione costituiti da numeri casuali generati dal server necessari per consentire
-
-                l'esplorazione sicura ed efficiente del sito.
+  l'esplorazione sicura ed efficiente del sito.
+  </p>
+  <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 3 - Cookies di terze parti
                 1. In relazione alla provenienza si distinguono i cookies inviati al browser
                 direttamente dal sito che si sta visitando e quelli di terze parti inviati al computer da
@@ -160,8 +174,9 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 esplicito.
                 3. Si applicherà l'articolo 22 del Regolamento (UE) 2016/679 e l'articolo 122 del
                 Codice in materia di protezione dei dati.
-                <br></br><br></br>
-                IV - DATI TRATTATI<br></br><br></br>
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
+                IV - DATI TRATTATI
                 1 - Modalità trattamento dati
                 1. Come tutti i siti web anche il presente sito fa uso di log files nei quali vengono
                 conservate informazioni raccolte in maniera automatizzata durante le visite degli
@@ -198,7 +213,6 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 servizi e gli strumenti messi a disposizione degli stessi, sono fornite dall'utente
                 consapevolmente e volontariamente, esentando il presente sito da qualsiasi
                 responsabilità in merito ad eventuali violazioni delle leggi. Spetta all'utente verificare
-
                 di avere i permessi per l'immissione di dati personali di terzi o di contenuti tutelati
                 dalle norme nazionali ed internazionali.
                 2 - Finalità del trattamento dati
@@ -221,17 +235,6 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 1. L'utente puì gestire i cookie anche attraverso le impostazioni del suo browser.
                 Tuttavia, cancellando i cookies dal browser potrebbe rimuovere le preferenze che ha
                 impostato per il sito.
-                2. Per ulteriori informazioni e supporto è possibile anche visitare la pagina di aiuto
-                specifica del web browser che si sta utilizzando:
-                - Internet E x p l o r e r :
-                http://windows.microsoft.com/en-us/windows-vista/block-or-allow-cookies
-                - Firefox:
-                https://support.mozilla.org/en-us/kb/enable-and-disable-cookies-website-preferen
-                ces
-                7/9
-                - Safari: http://www.apple.com/legal/privacy/it/
-                - Chrome: https://support.google.com/accounts/answer/61416?hl=it
-                - Opera: http://www.opera.com/help/tutorials/security/cookies/
                 5 - Plugin Social Network
                 1. Il presente sito incorpora anche plugin e/o bottoni per i social network, al fine di
                 consentire una facile condivisione dei contenuti sui vostri social network preferiti. Tali
@@ -241,20 +244,10 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 volontario uso del plugin. Si tenga presente che se l'utente naviga essendo loggato
                 nel social network allora ha già acconsentito all'uso dei cookie veicolati tramite
                 questo sito al momento dell'iscrizione al social network.
-                2. La raccolta e l'uso delle informazioni ottenute a mezzo del plugin sono regolati
-                dalle rispettive informative privacy dei social network, alle quali si prega di fare
-                riferimento:
-                Facebook: https://www.facebook.com/help/cookies
-                T w i t t e r :
-                https://support.twitter.com/articles/20170519-uso-dei-cookie-e-di-altre-tecnologie
-                -simili-da-parte-di-twitter
-                Google+:http://www.google.com/policies/technologies/cookies
-                Pinterest: https://about.pinterest.com/it/privacy-policy
-                AddThis: http://www.addthis.com/privacy/privacy-policy
-                Linkedin: https://www.linkedin.com/legal/cookie-policy
-                <br></br><br></br>
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 V. DIRITTI DELL'UTENTE
-                <br></br><br></br>
+                
                 1. L'art. 13, c. 2 del Regolamento (UE) 2016/679 elenca i diritti dell'utente.
                 2. Il sito paolominopoli.vercel.app intende pertanto informare l'utente sull'esistenza dei diritti
                 dell'utente, in base ai seguenti articoli del Regolamento (UE) 2016/679:
@@ -289,6 +282,8 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 preposta al controllo sul trattamento nello Stato Italiano.
                 6. Per una disamina più approfondita dei diritti che Le competono, si vedano gli
                 articoli 15-22 del Regolamento (UE) 2016/679.
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
                 VI - TRASFERIMENTO DATI A PAESI EXTRA UE
                 1. Il presente sito potrebbe condividere alcuni dei dati raccolti con servizi localizzati al
                 di fuori dell'area dell'Unione Europea. In particolare con Google, Facebook e
@@ -298,8 +293,10 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 Regolamento (UE) 2016/679, per cui non occorre ulteriore consenso. Le aziende
                 sopra menzionate garantiscono la propria adesione al Privacy Shield.
                 2. Non verranno mai trasferiti dati a Paesi terzi che non rispettino le condizioni
-                previste dall'articolo 45 e ss, del Regolamento (UE).<br></br><br></br>
-                VII. SICUREZZA DATI FORNITI<br></br><br></br>
+                previste dall'articolo 45 e ss, del Regolamento (UE).
+                </p>
+                <p style={{ fontSize: "20px", margin: "0px 15px 0px 15px", padding: "45px", color: "#fff", width: "100%" }}>
+                VII. SICUREZZA DATI FORNITI
                 1. Il presente sito tratta i dati degli utenti in maniera lecita e corretta, adottando le
                 opportune misure di sicurezza volte ad impedire accessi non autorizzati,
                 divulgazione, modifica o distruzione non autorizzata dei dati. Il trattamento viene
@@ -319,7 +316,8 @@ const PrivacyPolicy: NextPage<Props> = ({ post, infos }) => {
                 alle disposizioni normative in materia, ed in particolare in conformità al Regolamento
                 UE) 2016/679.
 
-            </p> */}
+            </p>
+            </div>
         </div>
 
     )
