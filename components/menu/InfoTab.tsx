@@ -30,15 +30,15 @@ const InfoTab: React.FC<Props> = ({ }) => {
         <span style={{ marginTop: "10px" }}> <Logo ></Logo></span>
         <div style={{ display: "flex",  marginTop: "10px" }}>
 
-            <a target="_blank" href={info[0]?.acf.instagram ? info[0]?.acf.instagram : "/"} >
+            <Link  href={info[0]?.acf.instagram ? info[0]?.acf.instagram : "/"} >
                 <InstagramIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer",marginLeft:"15px" ,marginRight:"15px" }} />
-            </a>
-            <a target="_blank" href={info[0]?.acf.linkedin ? info[0]?.acf.linkedin : "/"}>
+            </Link>
+            <Link  href={info[0]?.acf.linkedin ? info[0]?.acf.linkedin : "/"}>
                 <LinkedInIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer",marginLeft:"15px" ,marginRight:"15px" }}></LinkedInIcon>
-            </a>
-            <a  target="_blank"href={info[0]?.acf.email ? info[0]?.acf.email : "/"}>
+            </Link>
+            <Link   href={info[0]?.acf.email ? info[0]?.acf.email : "/"}>
                 <MailOutlineRoundedIcon sx={{ color: "#fff", fontSize: "2rem", cursor: "pointer",marginLeft:"15px" ,marginRight:"15px" }}></MailOutlineRoundedIcon>
-            </a>
+            </Link>
         </div>
 
 
