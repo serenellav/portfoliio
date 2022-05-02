@@ -25,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   background: black;
-  overflow-y: scroll;
+
   --secondary: rgb(161, 161, 161);
   --divider: #343434;
 }
