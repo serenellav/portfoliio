@@ -1,10 +1,11 @@
 import type { GetStaticPropsResult, NextPage } from 'next'
-import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { cartSelector, setData, setInfo } from '../store/cart.slice'
+
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import Card from '../components/Card'
+
 import { color } from '@mui/system'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { cartSelector, setData, setInfo } from '../../store/cart.slice'
 
 
 interface Props {
