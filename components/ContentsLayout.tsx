@@ -51,6 +51,12 @@ const ContentLayout: React.FC<Props> = ({ content }) => {
 			{lay.map((obj, i) =>
 				contentRender(obj, i)
 			)}
+			{content?.acf?.galleria && 
+			content?.acf?.galleria.map((el: any) =>
+				<div key={el.id} style={{height:"auto",width:"100%",position:"relative"}}><Image  width={500}
+				height={500} src={el.url} layout="responsive"  />
+				{el.description &&	<p className='post-content-description'>{el.description}</p>}</div>
+			)}
 		</>
 	);
 }
