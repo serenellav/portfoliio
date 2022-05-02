@@ -44,8 +44,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   buttonStyle={{ color: "#fff",fontWeight: 800, fontSize: "13px",background: "#008069",margin:"5px" }}
   expires={150}
 >
-  Questo sito usa cookies per migliorare la tua esperienza di navigazione.{" "}
- <Link href="/PrivacyPolicy"><span style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} >Vedi cookies e privacy policy</span></Link>
+  Questo sito usa cookies per migliorare la tua esperienza di navigazione.
+
 </CookieConsent>
 
    
