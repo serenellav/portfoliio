@@ -6,7 +6,7 @@ import { store } from '../store/index'
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import { NextSeo } from 'next-seo';
-import CookieConsent from "react-cookie-consent";
+
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return <Provider store={store}>
