@@ -33,9 +33,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
     <Header></Header>
     <Sidebar></Sidebar>
-    <AnimatePresence exitBeforeEnter >
-      <Component key={router.route} {...pageProps} />
-      <CookieConsent
+    <CookieConsent
     contentStyle={{margin:"0px",position:"relative"}}
   location="bottom"
   buttonText="Ok,Ho capito."
@@ -47,6 +45,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   Questo sito usa cookies per migliorare la tua esperienza di navigazione.{" "}
   <span style={{ fontSize: "13px" }}><a style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} href="/PrivacyPolicy">Vedi cookies e privacy policy</a></span>
 </CookieConsent>
+    <AnimatePresence exitBeforeEnter >
+      <Component key={router.route} {...pageProps} />
+    
     </AnimatePresence>
 
   </Provider>
