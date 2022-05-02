@@ -6,6 +6,7 @@ import { store } from '../store/index'
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import { NextSeo } from 'next-seo';
+import CookieConsent from 'react-cookie-consent';
 
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -33,6 +34,19 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
     <Header></Header>
     <Sidebar></Sidebar>
+    <CookieConsent
+    contentStyle={{margin:"0px",position:"relative"}}
+  location="bottom"
+  buttonText="Ok,Ho capito."
+  cookieName="myAwesomeCookieName2"
+  style={{ background: "#000" ,fontSize: "13px",fontWeight: 800}}
+  buttonStyle={{ color: "#fff",fontWeight: 800, fontSize: "13px",background: "#008069",margin:"5px" }}
+  expires={150}
+>
+  Questo sito usa cookies per migliorare la tua esperienza di navigazione.{" "}
+  <span style={{ fontSize: "13px" }}><a style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} href="/PrivacyPolicy">Vedi cookies e privacy policy</a></span>
+</CookieConsent>
+
    
     <AnimatePresence exitBeforeEnter >
       <Component key={router.route} {...pageProps} />
