@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import { NextSeo } from 'next-seo';
 import CookieConsent from 'react-cookie-consent';
+import Link from 'next/link';
 
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -44,7 +45,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   expires={150}
 >
   Questo sito usa cookies per migliorare la tua esperienza di navigazione.{" "}
-  <span style={{ fontSize: "13px" }}><a style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} href="/PrivacyPolicy">Vedi cookies e privacy policy</a></span>
+ <Link href="/PrivacyPolicy"><span style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} >Vedi cookies e privacy policy</span></Link>
 </CookieConsent>
 
    
