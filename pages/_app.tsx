@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
     <Header></Header>
     <Sidebar></Sidebar>
-    <CookieConsent
+    {/* <CookieConsent
     contentStyle={{margin:"0px",position:"relative"}}
   location="bottom"
   buttonText="Ok,Ho capito."
@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 >
   Questo sito usa cookies per migliorare la tua esperienza di navigazione.
 
-</CookieConsent>
+</CookieConsent> */}
 
    
     <AnimatePresence exitBeforeEnter >
