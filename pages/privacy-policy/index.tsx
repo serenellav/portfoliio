@@ -37,7 +37,8 @@ const PrivacyPolicy: NextPage<Props> = ({ post ,infos}) => {
 
   return (
     <div className="root">
-      <p  style={{ fontSize: "20px",margin:"0px 15px 0px 15px",padding:"45px", color:"#fff" ,width:"100%"}}>
+        ciao
+      {/* <p  style={{ fontSize: "20px",margin:"0px 15px 0px 15px",padding:"45px", color:"#fff" ,width:"100%"}}>
     
       <br></br><br></br>
   PRIVACY POLICY<br></br><br></br>
@@ -320,7 +321,7 @@ const PrivacyPolicy: NextPage<Props> = ({ post ,infos}) => {
   alle disposizioni normative in materia, ed in particolare in conformità al Regolamento
   UE) 2016/679.
         
-        </p>
+        </p> */}
     </div>
 
   )
