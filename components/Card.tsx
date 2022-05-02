@@ -15,7 +15,7 @@ const Card: React.FC<Props> = ({  item }) => {
 
 	return (
 		<li className={`card`}>
-			<Link href={`/${item?.id}`} scroll={false} >
+			<Link href={`/post/${item?.id}`} scroll={false} >
 				<a>
 					<div
 						className="card-content-container">

@@ -5,10 +5,10 @@ import { imageOptimizer } from 'next/dist/server/image-optimizer'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import ContentLayout from '../components/ContentsLayout'
-import Swipe3DModel from '../components/Swipe3DModel'
-import { cartSelector, setInfo } from '../store/cart.slice'
-import { useAppDispatch, useAppSelector } from '../store/hooks'
+import ContentLayout from '../../components/ContentsLayout'
+import Swipe3DModel from '../../components/Swipe3DModel'
+import { cartSelector, setInfo } from '../../store/cart.slice'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
 
 interface Props {
 

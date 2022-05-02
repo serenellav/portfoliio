@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   expires={150}
 >
   Questo sito usa cookies per migliorare la tua esperienza di navigazione.
- <Link href="/PrivacyPolicy"><span style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} >Vedi cookies e privacy policy</span></Link>
+ <Link href="/privacy-policy"><span style={{ fontSize: "13px",color:"#008069",textDecoration:"underline"}} >Vedi cookies e privacy policy</span></Link>
 </CookieConsent>
 
    
