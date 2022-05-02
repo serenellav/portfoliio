@@ -37,8 +37,7 @@ const PrivacyPolicy: NextPage<Props> = ({ post ,infos}) => {
 
   return (
     <div className="root">
-        ciao
-      {/* <p  style={{ fontSize: "20px",margin:"0px 15px 0px 15px",padding:"45px", color:"#fff" ,width:"100%"}}>
+      <p  style={{ fontSize: "20px",margin:"0px 15px 0px 15px",padding:"45px", color:"#fff" ,width:"100%"}}>
     
       <br></br><br></br>
   PRIVACY POLICY<br></br><br></br>
@@ -279,11 +278,11 @@ const PrivacyPolicy: NextPage<Props> = ({ post ,infos}) => {
   3. Le richieste possono essere indirizzate al titolare del trattamento, senza formalità
   o, in alternativa, utilizzando il modello previsto dal Garante per la Protezione dei Dati
   Personali, o inviando una mail all'indirizzo: paolominopoli@gmail.com
-  4. Qualora il trattamento sia basato sull'art. 6, paragrafo 1, lett. a) – consenso
-  espresso all'utilizzo – oppure sull'art. 9, paragrafo 2 lett. a) – consenso espresso
+  4. Qualora il trattamento sia basato sull'art. 6, paragrafo 1, lett. a)  consenso
+  espresso all'utilizzo  oppure sull'art. 9, paragrafo 2 lett. a)  consenso espresso
   all'utilizzo di dati genetici, biometrici, relativi alla salute, che rivelino convinzioni
   religiose, o filosofiche o appartenenza sindacale, che rivelino l'origine razziale o
-  etnica, le opinioni politiche – l'utente ha il diritto di revocare il consenso in qualsiasi
+  etnica, le opinioni politiche  l'utente ha il diritto di revocare il consenso in qualsiasi
   momento senza pregiudicare la liceità del trattamento basata sul consenso prestato
   prima della revoca.
   5. Parimenti, in caso di violazione della normativa, l'utente ha il diritto di proporre
@@ -321,7 +320,7 @@ const PrivacyPolicy: NextPage<Props> = ({ post ,infos}) => {
   alle disposizioni normative in materia, ed in particolare in conformità al Regolamento
   UE) 2016/679.
         
-        </p> */}
+        </p>
     </div>
 
   )
