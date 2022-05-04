@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           title: "Paolo Minopoli",
           description: "3D Designer",
           images: [
-            { width:1200,
-              height:1200,
+            { width:400,
+              height:400,
               url: "https://paolominopoli.vercel.app/avatar-paolo.png",
               alt: "Paolo Minopoli",
             },
