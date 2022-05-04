@@ -40,7 +40,7 @@ const ContentLayout: React.FC<Props> = ({ content }) => {
 			/>
 					{obj.description &&	<p className='post-content-description'>{obj.description}</p>}</div>
 	else
-			return <div key={i} className='post-content-container' dangerouslySetInnerHTML={{ __html: obj }} />
+			return  obj && <div key={i} className='post-content-container' dangerouslySetInnerHTML={{ __html: obj }} />
 	}
 
 
