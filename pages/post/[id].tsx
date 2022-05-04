@@ -17,7 +17,7 @@ interface Props {
 
 }
 
-const Post: NextPage<Props> = ({ posts,infos }) => {
+const Post: NextPage<Props> = ({ posts, infos }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -26,10 +26,7 @@ const Post: NextPage<Props> = ({ posts,infos }) => {
   const item =
     posts?.find(item => item.id.toString() === id);
 
-  // React.useEffect(()=>{
-  //   const contenuto = document.querySelector("body");
-  //   contenuto?.setAttribute("class", "overflow-hidden");
-  // },[])
+
   async function navigate() {
     router.push({
       pathname: "/",
@@ -49,7 +46,7 @@ const Post: NextPage<Props> = ({ posts,infos }) => {
 
   useEffect(() => {
     dispatch(setInfo(infos))
-   },
+  },
     [])
 
   return <div className="root">
@@ -59,20 +56,14 @@ const Post: NextPage<Props> = ({ posts,infos }) => {
         <div className="card-content-container"  >
           <div className="card-content post-content">
             <div className="card-image-container" >
-
               <Image layout='fill'
-              className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
-
+                className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
             </div>
-          </div>
-          <div className="title-container"  >
-
-
           </div>
         </div>
       </div>
       <div style={{ display: "flex", gap: "30px" }}>
-        <h2>{item?.title.rendered}</h2>
+        <h1>{item?.title.rendered}</h1>
       </div>
       {item?.acf?.embed && <Swipe3DModel embed={item.acf.embed}></Swipe3DModel>}
       <div className='post-content-container' dangerouslySetInnerHTML={{ __html: item?.content.rendered }} />

@@ -1,6 +1,7 @@
 html,
 body {
   overflow-x: hidden;
+  background: black;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -14,108 +15,41 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: black;
-
-  --secondary: rgb(161, 161, 161);
-  --divider: #343434;
-}
-.menu-swipe .MuiDrawer-paper {
-  width: 300px;
-  background-color: #000 !important;
-}
-.model-swipe .MuiDrawer-paper {
-  width: 100%;
-  height: 97vh;
-  background-color: #000 !important;
-}
-.sketchfab-embed-wrapper,
-.sk-frame-wrapper,
-.sk-frame-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  padding-top: 10px;
-}
-.loader {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  z-index: -1;
-}
-.loader svg{height: 140px;width: 140px;}
-.open-model-btn {
-  background-color: #008069 !important;
-  color: white !important;
-
+  font-family: ".SFNSText", "SFProText-Regular", "SFUIText-Regular", ".SFUIText",
+    Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .root {
   display: flex;
   padding: 5px;
   justify-content: center;
 }
-#card-list-container,
-.post-container {
-  max-width: 990px;
-  flex: 1 1 100%;
+
+h1 {
+  font-weight: bold;
+  color: white;
+  margin: 6px 0 12px;
 }
-.post-content-description{
-  margin-bottom: 40px;
-  margin-top: 10px;
-}
-.PrivateSwipeArea-root {
-  width: unset !important;
-}
-.close-menu {
-  cursor: pointer;
-  position: absolute;
+h2 {
   color: #fff;
-  right: 5px;
-  top: 5px;
-  font-weight: 800;
+  margin: 8px 0;
 }
-.close-map {
-  cursor: pointer;
-  position: absolute;
-  color: #fff;
-  left: 5px;
-  top: 5px;
-  font-weight: 800;
-}
-.sidebar {
-  display: none;
-}
-.infoTab {
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.infoTab::-webkit-scrollbar ,html::-webkit-scrollbar,body::-webkit-scrollbar {
-  display: none;
+p {
+  color: #9d9ca1;
+  font-size: 20px;
+  line-height: 28px;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.infoTab ,body ,html{
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.avatar-container .MuiAvatar-root {
-  height: 220px;
-  width: 220px;
-}
+// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER
+// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER
+// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER// HEADER
 
 .header {
   padding: 5px;
@@ -128,79 +62,92 @@ body {
   justify-content: center;
 }
 
-.header .logo img {
-  width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 .header .menu {
   margin-left: auto;
 }
-.header .map {
-  margin-left: auto;
-  margin-right: 5px;
+
+.logo {
+  font-weight: 800;
+  font-size: 30px;
 }
 
-.overflow-hidden {
-  position: fixed;
-}
+.logo-1{color: #fff;}
+.logo-2{color:#008069}
 
-* {
-  box-sizing: border-box;
-  font-family: ".SFNSText", "SFProText-Regular", "SFUIText-Regular", ".SFUIText",
-    Helvetica, Arial, sans-serif;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR
+// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR
+// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR
 
-#root {
-  display: flex;
-  justify-content: center;
+.menu-swipe .MuiDrawer-paper {
+  width: 300px;
+  background-color: #000 !important;
 }
-
-.screen {
+.model-swipe .MuiDrawer-paper {
   width: 100%;
-  height: 100%;
+  height: 97vh;
+  background-color: #000 !important;
+}
+.PrivateSwipeArea-root {
+  width: unset !important;
 }
 
-.container {
+.close-menu {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  right: 5px;
+  top: 5px;
+  font-weight: 800;
+}
+
+.sidebar {
+  display: none;
+}
+.infoTab {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infoTab::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.infoTab,
+body,
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.avatar-container .MuiAvatar-root {
+  height: 220px;
+  width: 220px;
+}
+
+.social-link-icon {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+// CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE
+// CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE
+// CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE // CARD STYLE
+
+#card-list-container,
+.post-container {
   max-width: 990px;
   flex: 1 1 100%;
-  padding: 45px 25px;
 }
-
-h1 {
-  font-weight: bold;
-  color: white;
-  margin: 6px 0 12px;
-}
-
-.date {
-  color: var(--secondary);
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.avatar {
-  background: var(--divider);
-  border-radius: 50%;
-  position: absolute;
-  bottom: 12px;
-  right: 0;
-  /* overflow: hidden; */
-}
-
-.avatar,
-.avatar img {
-  width: 40px;
-  height: 40px;
-}
-
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.post-content-description {
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
 .hero-post {
   padding-top: 45px;
@@ -221,7 +168,6 @@ li {
   flex-wrap: wrap;
   align-content: flex-start;
 }
-
 .card {
   position: relative;
   padding: 25px;
@@ -229,38 +175,23 @@ li {
   flex: 0 0 40%;
   max-width: 40%;
 }
-
 .card:nth-child(4n + 1),
 .card:nth-child(4n + 4) {
   flex: 0 0 60%;
   max-width: 60%;
 }
-
 .card:nth-child(odd) {
   padding-left: 0;
 }
-
 .card:nth-child(even) {
   padding-right: 0;
 }
-
 .card-content-container {
   width: 100%;
   height: 100%;
   position: relative;
   display: block;
 }
-
-.card-content-container.open {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: 11;
-  overflow-y: scroll;
-  padding: 40px 0;
-}
-
 .card-content {
   pointer-events: auto;
   position: relative;
@@ -272,32 +203,16 @@ li {
   margin: 0 auto;
 }
 
-.open .card-content {
-  height: auto;
-  max-width: 700px;
-  /* overflow: hidden; */
-}
-
-.card-open-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-/* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX */
-/* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX */
-/* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX */
+/* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */
+/* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */
+/* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */ /* POST IMG RESPOSNCIVE FIX */
 
 .post-img-container {
-
   width: 100%;
-
+  margin-bottom: 20px;
   > span {
     position: unset !important;
   }
-
   .gallery-img {
     object-fit: contain;
     width: 100% !important;
@@ -305,15 +220,7 @@ li {
     height: unset !important;
   }
 }
-
-
-
-
 .card-image-container {
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;*/
   height: 100%;
   width: 100%;
 }
@@ -323,80 +230,7 @@ li {
   width: 100%;
   object-fit: cover;
 }
-.img-overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgb(0, 0, 0, 0.3);
-}
 
-.open .card-image-container,
-.open .title-container {
-  z-index: 1;
-}
-
-.title-container {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  max-width: 300px;
-}
-
-.open .title-container {
-  top: 30px;
-  left: 30px;
-}
-
-h2 {
-  color: #fff;
-  margin: 8px 0;
-}
-
-.category {
-  color: #fff;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.overlay {
-  z-index: 1;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  will-change: opacity;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 990px;
-}
-
-.overlay a {
-  display: block;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  left: 50%;
-
-  transform: translateX(-50%);
-}
-
-.content-container {
-  padding: 460px 35px 35px 35px;
-  max-width: 700px;
-  width: 90vw;
-}
-
-p {
-  color: #9d9ca1;
-  font-size: 20px;
-  line-height: 28px;
-}
-.video {
-  width: 100%;
-  height: 100%;
-}
 .video_player {
   height: 100% !important;
   width: 100% !important;
@@ -406,6 +240,40 @@ p {
   width: 100%;
   height: 100%;
 }
+
+// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB
+// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB
+// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB// SKETCHFAB
+
+.sketchfab-embed-wrapper,
+.sk-frame-wrapper,
+.sk-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+}
+.loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+.loader svg {
+  height: 140px;
+  width: 140px;
+}
+.open-model-btn {
+  background-color: #008069 !important;
+  color: white !important;
+}
+
+// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY
+// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY
+// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY
+// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY// MEDIA QUERY
 
 @media only screen and (min-width: 1200px) {
   .model-swipe,

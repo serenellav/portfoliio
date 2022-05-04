@@ -11,47 +11,41 @@ import Image from "next/image";
 
 interface Props {
 
-    post?: any[],
+	post?: any[],
 
 }
 
 
 const SwipableMenu: React.FC<Props> = ({ post }) => {
 
-    const [open, setOpen] = React.useState(false)
+	const [open, setOpen] = React.useState(false)
 
-    return (
-        <>
-            {/* <MenuRoundedIcon
-                sx={{ color: "#fff", fontSize: 35 }}
-                className="menu"
-                onClick={() => setOpen(true)}
-            ></MenuRoundedIcon > */}
-            <Avatar className="menu" onClick={() => setOpen(true)}>
-                <Image alt="Paolo Minopoli" src="https://paolominopoli.vercel.app/avatar-paolo.png" layout="fill" />
-            </Avatar>
+	return (
+		<>
+			<Avatar className="menu" onClick={() => setOpen(true)}>
+				<Image alt="Paolo Minopoli" src="https://paolominopoli.vercel.app/avatar-paolo.png" layout="fill" />
+			</Avatar>
+			<SwipeableDrawer
+				className="menu-swipe"
+				anchor="left"
+				open={open}
+				onClose={() => setOpen(false)}
+				onOpen={() => setOpen(true)}
+			>
+				<div
+					onClick={() => setOpen(false)}
+					className="close-menu">
+					<ArrowCircleLeftOutlinedIcon
+						sx={{ color: "#fff", fontSize: 35 }}
+						className="menu"
+						onClick={() => setOpen(true)}
+					></ArrowCircleLeftOutlinedIcon ></div>
+				<span style={{ marginTop: "20px" }}></span>
+				<InfoTab></InfoTab>
+			</SwipeableDrawer>
 
-            <SwipeableDrawer
-                className="menu-swipe"
-                anchor="left"
-                open={open}
-                onClose={() => setOpen(false)}
-                onOpen={() => setOpen(true)}
-            >
-                <div
-                    onClick={() => setOpen(false)}
-                    className="close-menu">
-                    <ArrowCircleLeftOutlinedIcon
-                        sx={{ color: "#fff", fontSize: 35 }}
-                        className="menu"
-                        onClick={() => setOpen(true)}
-                    ></ArrowCircleLeftOutlinedIcon ></div>
-                <span style={{ marginTop: "20px" }}></span>
-                <InfoTab></InfoTab>
-            </SwipeableDrawer>
-
-        </>
-    );
+		</>
+	);
 }
 
 

@@ -3,20 +3,15 @@ import Link from "next/link"
 
 
 const Logo = (): JSX.Element => (
-    <div
-    className="Logo"
-  
-    >
-       
-        <Link href="/" >
-            <a> 
-            <h1 style={{fontWeight:"800",margin:0}}>PAOLO
-            <span style={{color:"#008069"}}>PIEZ</span>
-            </h1>
-            </a>
-        </Link>
-    
-    </div>
+	<div>
+		<Link href="/" >
+			<a>
+				<span className="logo logo-1">PAOLO
+					<span className="logo-2">PIEZ</span>
+				</span>
+			</a>
+		</Link>
+	</div>
 )
 
 export default Logo
