@@ -1,7 +1,10 @@
+@import "variables";
+
+
 html,
 body {
   overflow-x: hidden;
-  background: black;
+  background: $body-bg-color;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -67,6 +70,7 @@ li {
 }
 
 .logo {
+  font-family: $logo-font;
   font-weight: 800;
   font-size: 30px;
 }
