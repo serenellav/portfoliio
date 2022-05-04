@@ -28,7 +28,7 @@ const ContentLayout: React.FC<Props> = ({ content }) => {
 	const contentRender = (obj: any, i: number) => {
 		if (obj && obj.type && obj.type == "image")
 			return <div className="post-img-container" key={i} ><Image  
-		 src={obj.url} layout="fill"  />
+		 src={obj.url} className="gallery-img" layout="fill"  />
 			{obj.description &&	<p className='post-content-description'>{obj.description}</p>}</div>
 		if (obj && obj.type && obj.type == "video")
 			return <div key={i}><ReactPlayer
