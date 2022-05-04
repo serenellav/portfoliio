@@ -60,8 +60,8 @@ const Post: NextPage<Props> = ({ posts,infos }) => {
           <div className="card-content post-content">
             <div className="card-image-container" >
 
-              <Image layout='fill' width={500}
-                height={500} className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
+              <Image layout='fill'
+              className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
 
             </div>
           </div>

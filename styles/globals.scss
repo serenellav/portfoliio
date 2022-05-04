@@ -286,6 +286,29 @@ li {
   bottom: 0;
 }
 
+/* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX */
+/* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX */
+/* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX *//* POST IMG RESPOSNCIVE FIX */
+
+.post-img-container {
+
+  width: 100%;
+
+  > span {
+    position: unset !important;
+  }
+
+  .gallery-img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
+
+
+
+
 .card-image-container {
   /* position: absolute;
   top: 0;

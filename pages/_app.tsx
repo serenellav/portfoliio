@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import type { AppProps } from 'next/app'
 import { Provider } from "react-redux"

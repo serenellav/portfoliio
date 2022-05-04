@@ -27,8 +27,8 @@ const ContentLayout: React.FC<Props> = ({ content }) => {
 
 	const contentRender = (obj: any, i: number) => {
 		if (obj && obj.type && obj.type == "image")
-			return <div key={i} style={{height:"auto",width:"100%",position:"relative"}}><Image  width={500}
-			height={500} src={obj.url} layout="responsive"  />
+			return <div className="post-img-container" key={i} ><Image  
+		 src={obj.url} layout="fill"  />
 			{obj.description &&	<p className='post-content-description'>{obj.description}</p>}</div>
 		if (obj && obj.type && obj.type == "video")
 			return <div key={i}><ReactPlayer
@@ -53,8 +53,8 @@ const ContentLayout: React.FC<Props> = ({ content }) => {
 			)}
 			{content?.acf?.galleria && 
 			content?.acf?.galleria.map((el: any) =>
-				<div key={el.id} style={{height:"auto",width:"100%",position:"relative"}}><Image  width={500}
-				height={500} src={el.url} layout="responsive"  />
+				<div key={el.id} className="post-img-container" ><Image  
+				 src={el.url} className="gallery-img" layout="fill"  />
 				{el.description &&	<p className='post-content-description'>{el.description}</p>}</div>
 			)}
 		</>
