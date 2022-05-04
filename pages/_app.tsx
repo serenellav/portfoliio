@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return <Provider store={store}>
        <NextSeo
        title = 'Portfolio'
-       titleTemplate = 'Paolo Minopoli | %s'
+       titleTemplate = 'Paolo Minopoli &vert; %s'
         defaultTitle="Paolo Minopoli"
         description="3D Designer"
         canonical="https://paolominopoli.vercel.app/"
