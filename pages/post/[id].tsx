@@ -1,4 +1,5 @@
 
+import { Divider } from '@mui/material'
 import { AnimatePresence, motion } from 'framer-motion'
 import { GetStaticPaths, GetStaticPropsResult, NextPage } from 'next'
 import { imageOptimizer } from 'next/dist/server/image-optimizer'
@@ -73,8 +74,10 @@ const Post: NextPage<Props> = ({ posts, infos }) => {
         <Image key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
       <ContentLayout content={item} />
       <div>
+     
       <h2>All Works</h2>
-      <ul className="card-list">
+      <div className='divider'></div>
+       <ul className="card-list">
        {posts?.map(item => (
          <Card key={item.id} item={item} scrollTop/>
        ))}
