@@ -73,7 +73,7 @@ const Post: NextPage<Props> = ({ posts, infos }) => {
       {/* {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
         <Image key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
       <ContentLayout content={item} />
-      <div>
+      <div className='all-work-container'>
      
       <h2>All Works</h2>
       <div className='divider'></div>
