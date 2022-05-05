@@ -83,8 +83,11 @@ li {
   font-size: 30px;
 }
 
-.logo-1{color: $logo-color-1;}
-.logo-2{color:$logo-color-2}
+.logo-1{
+  color: $logo-color-1;
+  
+}
+.logo-2{color:$logo-color-2; font-family: $logo-font}
 
 // MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR
 // MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR// MENU DRAWER &  SIDEBAR
