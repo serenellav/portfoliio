@@ -53,7 +53,7 @@ const Post: NextPage<Props> = ({ posts, infos }) => {
   return<>
   <div className="root">
 
-    <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0}}  transition={{ velocity: 50 }} className="post-container">
+    <motion.div key={item?.id} initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0}}  transition={{ velocity: 50 }} className="post-container">
       <div className="hero-post">
         <div className="card-content-container"  >
           <div className="card-content post-content">
