@@ -7,22 +7,23 @@ import Link from 'next/link'
 interface Props {
 
 	item?: any,
+	scrollTop?:boolean
 
 }
 
-const Card: React.FC<Props> = ({ item }) => {
+const Card: React.FC<Props> = ({ item ,scrollTop = false}) => {
 
 
 	return (
 		<li className={`card`}>
-			<Link href={`/post/${item?.id}`} scroll={false} >
+			<Link href={`/post/${item?.id}`} scroll={scrollTop} >
 				<a>
 					<div
 						className="card-content-container">
 						<div className="card-content">
 							<div className="card-image-container">
 								<Image alt="Paolo Minopoli" layout="fill"
-									className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} />
+									className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : "/"} />
 							</div>
 						</div>
 					

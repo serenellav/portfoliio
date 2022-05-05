@@ -5,6 +5,7 @@ import { imageOptimizer } from 'next/dist/server/image-optimizer'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
+import Card from '../../components/Card'
 import ContentLayout from '../../components/ContentsLayout'
 import Swipe3DModel from '../../components/Swipe3DModel'
 import { cartSelector, setInfo } from '../../store/cart.slice'
@@ -49,15 +50,16 @@ const Post: NextPage<Props> = ({ posts, infos }) => {
   },
     [])
 
-  return <div className="root">
+  return<>
+  <div className="root">
 
-    <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ velocity: 50 }} className="post-container">
+    <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} transition={{ velocity: 50 }} className="post-container">
       <div className="hero-post">
         <div className="card-content-container"  >
           <div className="card-content post-content">
             <div className="card-image-container" >
               <Image layout='fill'
-                className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : ""} alt="" />
+                className="card-image" src={item?.acf?.anteprima ? item?.acf?.anteprima : "/"} alt="" />
             </div>
           </div>
         </div>
@@ -70,9 +72,22 @@ const Post: NextPage<Props> = ({ posts, infos }) => {
       {/* {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
         <Image key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
       <ContentLayout content={item} />
+     
     </motion.div>
+ 
   </div>
+   <div className="root">
+     <h2>All Works</h2>
+   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ velocity: 50 }} id="card-list-container" >
 
+     <ul className="card-list">
+       {posts?.map(item => (
+         <Card key={item.id} item={item} scrollTop/>
+       ))}
+     </ul>
+   </motion.div>
+ </div>
+ </> 
 }
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
 
