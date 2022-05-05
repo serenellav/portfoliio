@@ -72,21 +72,18 @@ const Post: NextPage<Props> = ({ posts, infos }) => {
       {/* {item?.acf?.galleria && item?.acf?.galleria?.map((el: string | undefined, i: any) =>
         <Image key={i} src={el} alt="" style={{ width: "100%", height: "auto" }} />)} */}
       <ContentLayout content={item} />
-     
-    </motion.div>
- 
-  </div>
-   <div className="root">
-     <h2>All Works</h2>
-   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ velocity: 50 }} id="card-list-container" >
-
-     <ul className="card-list">
+      <div>
+      <h2>All Works</h2>
+      <ul className="card-list">
        {posts?.map(item => (
          <Card key={item.id} item={item} scrollTop/>
        ))}
      </ul>
-   </motion.div>
- </div>
+     </div>
+    </motion.div>
+ 
+  </div>
+  
  </> 
 }
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
