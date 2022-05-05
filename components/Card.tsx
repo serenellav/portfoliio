@@ -1,6 +1,6 @@
 import React from "react";
 import Image from 'next/image'
-
+import {motion} from 'framer-motion'
 import Link from 'next/link'
 
 
@@ -15,7 +15,12 @@ const Card: React.FC<Props> = ({ item ,scrollTop = false}) => {
 
 
 	return (
-		<li className={`card`}>
+		<motion.li className={`card`}
+		whileHover={{
+			scale: 1.05,
+			transition: { duration: 0.5 },
+		}}
+		whileTap={{ scale: 0.9 }}>
 			<Link href={`/post/${item?.id}`} scroll={scrollTop} >
 				<a>
 					<div
@@ -32,7 +37,7 @@ const Card: React.FC<Props> = ({ item ,scrollTop = false}) => {
 				</a>
 			</Link>
 
-		</li>
+		</motion.li>
 	);
 }
 
