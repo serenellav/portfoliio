@@ -20,21 +20,21 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     </Head>
     <NextSeo
       title='Portfolio'
-      titleTemplate='Paolo Minopoli | %s'
-      defaultTitle="Paolo Minopoli"
-      description="3D Designer"
-      canonical="https://paolominopoli.vercel.app/"
+      titleTemplate='Serenella Vezzi | %s'
+      defaultTitle="Serenella Vezzi"
+      description="Graphic Designer"
+      canonical="https://serenellavezzi.vercel.app/"
       openGraph={{
         type: 'website',
-        url: "https://paolominopoli.vercel.app/",
-        title: "Paolo Minopoli",
-        description: "3D Designer",
+        url: "https://serenellavezzi.vercel.app/",
+        title: "Serenella Vezzi",
+        description: "Graphic Designer",
         images: [
           {
             width: 400,
             height: 400,
-            url: "https://paolominopoli.vercel.app/avatar-paolo.png",
-            alt: "Paolo Minopoli",
+            url: "https://serenellavezzi.vercel.app/vett7.png",
+            alt: "Serenella Vezzi",
           },
         ],
       }}
