@@ -52,6 +52,9 @@ li {
   padding: 0;
   margin: 0;
 }
+.post-content-container{
+  color:$p-color;
+}
 
 .divider{
   width: 100%;
@@ -325,11 +328,11 @@ html {
     display: flex;
     align-items: center;
   }
-  .root {
-    margin-left: 300px;
+  .root {padding-top: 40px;
+    // margin-left: 300px;
   }
   .header .menu {
-    display: none;
+    // display: none;
   }
   .header {
     justify-content: start;
