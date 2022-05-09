@@ -12,7 +12,7 @@ import Swipe3DModel from '../../components/Swipe3DModel'
 import { cartSelector, setInfo } from '../../store/cart.slice'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 
-interface Props {
+interface Props { 
 
   posts?: any[],
   infos?: any[]
